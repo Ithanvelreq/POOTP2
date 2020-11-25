@@ -21,7 +21,7 @@ using namespace std;
 
 //----------------------------------------------------------------- PUBLIC		
 //----------------------------------------------------- Méthodes publiques
-	void LinkedList::Ajouter(const int * unTrajet)
+	void LinkedList::Ajouter(const Trajet * unTrajet)
 	{
 		Data * d = new Data(unTrajet);
 		if(!head){
@@ -59,7 +59,7 @@ LinkedList::~LinkedList()
 	Data * c1 = head;
 	Data * c2 = c1;
   	while(c1 != NULL) {
-    		c2 = c1 -> next;
+    		c2 = c1 -> next; 
 		delete c1;
 		c1 = c2;
   	}

@@ -23,7 +23,7 @@ using namespace std;
 //----------------------------------------------------- Méthodes publiques
 
 //-------------------------------------------- Constructeurs - destructeur
-Data::Data(const int * unTrajet)
+Data::Data(const Trajet * unTrajet)
 {
 	current = unTrajet;
 	next = NULL;

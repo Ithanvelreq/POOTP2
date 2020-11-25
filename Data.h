@@ -25,7 +25,7 @@ class Data
 {
 //----------------------------------------------------------------- PUBLIC
 public:
-	const int * current;
+	const Trajet * current;
 	Data * next;
 //----------------------------------------------------- Méthodes publiques
 		
@@ -37,7 +37,7 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-	Data(const int * unTrajet);
+	Data(const Trajet * unTrajet);
 	// Mode d'emploi :
 	// Construis un cellule de donnees utilisee pour notre LinkedList
 	//

@@ -32,7 +32,7 @@ public:
 	Data * tail;
 // type Méthode ( liste des paramètres );
 
-	void Ajouter (const int * unTrajet);
+	void Ajouter (const Trajet * unTrajet);
 	void Afficher() const;
 	// Mode d'emploi :
 	//
