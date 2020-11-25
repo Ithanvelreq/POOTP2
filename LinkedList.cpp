@@ -39,7 +39,7 @@ using namespace std;
 	{
 		Data * c = head;
   		while(c != NULL) {
-    			cout << *(c -> current) << "  " << endl;
+    			cout << c -> current.Afficher() << "  " << endl;
     			c = c -> next;
   		}
   		printf("\n");
