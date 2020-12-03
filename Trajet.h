@@ -1,7 +1,6 @@
 //---------- Interface de la classe <Trajet> (fichier Trajet.h) ----------->
 #if ! defined ( TRAJET_H )
 #define TRAJET_H
-
 //--------------------------------------------------- Interfaces utilisées
 
 //------------------------------------------------------------- Constantes
@@ -32,3 +31,5 @@ public:
     // Méthode permettant d'accéder à l'attribut protégé villeDepart
     // Contrat :
     //
+}
+#endif //Trajet.h
