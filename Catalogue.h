@@ -54,7 +54,7 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 	rechercheRecurrente(LinkedList & pp, const char * va) const;
 //----------------------------------------------------- Attributs protégés
-	LinkedList listeTrajets;
+	LinkedList * listeTrajets;
 };
 
 //-------------------------------- Autres définitions dépendantes de <Catalogue>

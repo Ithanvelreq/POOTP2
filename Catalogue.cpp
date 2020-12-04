@@ -29,7 +29,7 @@ void Ajouter(const Trajet * unTrajet)
 }
 void Recherches(const char * vd, const char * va) const
 {
-		Data * c = listeTrajets.head;
+		Data * c = listeTrajets->head;
   		while(c != NULL) {
     			if(!strcmp(*(c -> current).gettervilleDepart(), vd){
 				if(!strcmp(*(c -> current).gettervilleArrivee(), va){
@@ -41,7 +41,7 @@ void Recherches(const char * vd, const char * va) const
 }
 void Recherchea(const char * vd, const char * va) const
 {
-	Data * c = listeTrajets.head;
+	Data * c = listeTrajets->head;
 	while(c != NULL){
 		if(!strcmp(*(c -> current).gettervilleDepart(), vd)){
 			LinkedList pp = new LinkedList;
@@ -59,7 +59,7 @@ void Afficher() const{
 //-------------------------------------------- Constructeurs - destructeur
 Catalogue::Catalogue()
 {
-	LinkedList listeTrajets = new LinkedList;
+	LinkedList * listeTrajets = new * LinkedList;
 	#ifdef MAP
 		cout << "Appel au constructeur de <Catalogue>" << endl;
 	#endif
@@ -68,7 +68,7 @@ Catalogue::Catalogue()
 
 Catalogue::~Catalogue()
 {
-	delete ListeTrajets;
+	delete *ListeTrajets;
 	#ifdef MAP
 		cout << "Appel au destructeur de <Catalogue>" << endl;
 	#endif
@@ -80,7 +80,7 @@ Catalogue::~Catalogue()
 //----------------------------------------------------- Méthodes protégées
 rechercheRecurrente(LinkedList & pp, const char * va) const
 {
-	Data * c = listeTrajetshead;
+	Data * c = listeTrajets -> head;
 	while(c != NULL){
 		if(!strcmp(*(pp.tail -> current).gettervilleArrive(), *(c -> current).gettervilleDepart())){
 			if(!pp.Contains(*(c -> current))){
