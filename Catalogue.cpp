@@ -25,7 +25,7 @@ using namespace std;
 //----------------------------------------------------- Méthodes publiques
 void Ajouter(const Trajet * unTrajet)
 {
-	listeTrajets.Ajouter(unTrajet);
+	listeTrajets->Ajouter(unTrajet);
 }
 void Recherches(const char * vd, const char * va) const
 {
