@@ -21,7 +21,7 @@ class Trajet
 public:
 //----------------------------------------------------- Méthodes publiques
 
-    void Afficher (void);
+    void Afficher () const;
     // Mode d'emploi :
     // Affiche les attributs d'un trajet (villeDepart et villeArrivee)
     // Contrat :
@@ -32,3 +32,51 @@ public:
     // Méthode permettant d'accéder à l'attribut protégé villeDepart
     // Contrat :
     //
+    char * getterVilleArrivee () const;
+    // Mode d'emploi :
+    // Méthode permettant d'accéder à l'attribut protégé villeArrivee
+    // Contrat :
+    //
+
+//------------------------------------------------- Surcharge d'opérateurs
+/*    Trajet & operator = ( const Trajet & unTrajet );
+    // Mode d'emploi :
+    //
+    // Contrat :
+*/
+
+protected:
+//----------------------------------------------------- Méthodes protégées
+
+
+//-------------------------------------------- Constructeurs - destructeur
+/*    Trajet ( const Trajet & unTrajet );
+    // Mode d'emploi (constructeur de copie) :
+    //
+    // Contrat :
+    //
+*/
+
+    Trajet ();
+    // Mode d'emploi :
+    // Constructeur par défault
+    // Contrat :
+    //
+
+
+    virtual ~Trajet ( );
+    // Mode d'emploi :
+    //
+    // Contrat :
+    //
+
+//----------------------------------------------------- Attributs protégés
+char * villeDepart;
+char * villeArrivee;
+};
+
+//-------------------------------- Autres définitions dépendantes de <Ensemble>
+
+#endif // TRAJET_H
+
+

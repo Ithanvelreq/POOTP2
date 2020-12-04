@@ -1,4 +1,5 @@
 //---------- Interface de la classe <TrajetCompose> (fichier TrajetCompose.h) --->
+#include "LinkedList.h"
 #if ! defined ( TRAJETCOMPOSE_H )
 #define TRAJETCOMPOSE_H
 
@@ -29,7 +30,7 @@ public:
     // Contrat :
     //
 
-    char * getterListeTrajets () const;
+    LinkedList getterListeTrajet () const;
     // Mode d'emploi :
     // Méthode permettant d'accéder à l'attribut protégé listeTrajets
     // Contrat :

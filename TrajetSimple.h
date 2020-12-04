@@ -51,7 +51,7 @@ public:
     //
 */
 
-    TrajetSimple (const char * vd, const char* va, sondt char* mt );
+    TrajetSimple (char * vd, char* va, char* mt );
     // Mode d'emploi :
     // Construit un trajet simple avec une ville de départ, une ville
     // d'arrivée et un moyen de transport
