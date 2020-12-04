@@ -6,21 +6,23 @@
 
 //------------------------------------------------------ Include personnel
 #include "Trajet.h"
+#include <iostream>
+using namespace std;
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
 
-void Trajet::Afficher () const{
-
+void Trajet::Afficher () const {
+        cout << "Affiche Trajet : \n";
 }
 
-char * Trajet::getterVilleDepart () const {
+const char * Trajet::getterVilleDepart () const {
         return villeDepart;
 }
 
-char * Trajet::getterVilleArrivee () const {
+const char * Trajet::getterVilleArrivee () const {
         return villeArrivee;
 }
 
@@ -43,7 +45,7 @@ char * Trajet::getterVilleArrivee () const {
 } //----- Fin de Trajet (constructeur de copie)
 */
 
-Trajet::Trajet ( )
+/*Trajet::Trajet ( )
 // Algorithme :
 //
 {
@@ -51,7 +53,7 @@ Trajet::Trajet ( )
     cout << "Appel au constructeur de <Trajet>" << endl;
 #endif
 } //----- Fin de Trajet
-
+*/
 Trajet::~Trajet ( )
 // Algorithme :
 //

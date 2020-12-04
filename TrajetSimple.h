@@ -1,7 +1,7 @@
 //---------- Interface de la classe <TrajetSimple> (fichier TrajetSimple.h) --->
 #if ! defined ( TRAJETSIMPLE_H )
 #define TRAJETSIMPLE_H
-
+#include "Trajet.h"
 //--------------------------------------------------- Interfaces utilisées
 
 //------------------------------------------------------------- Constantes
@@ -15,7 +15,7 @@
 //
 //------------------------------------------------------------------------
 
-class TrajetSimple : virtual public Trajet
+class TrajetSimple : public Trajet
 {
 //----------------------------------------------------------------- PUBLIC
 
@@ -29,7 +29,7 @@ public:
     // Contrat :
     //
 
-    char * getterMoyenTransport () const;
+    const char * getterMoyenTransport () const;
     // Mode d'emploi :
     // Méthode permettant d'accéder à l'attribut protégé moyenTransport
     // Contrat :
@@ -51,7 +51,7 @@ public:
     //
 */
 
-    TrajetSimple (char * vd, char* va, char* mt );
+    TrajetSimple (const char * vd,const char* va,const char* mt );
     // Mode d'emploi :
     // Construit un trajet simple avec une ville de départ, une ville
     // d'arrivée et un moyen de transport
@@ -69,11 +69,10 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
-char * moyenTransport;
+const char * moyenTransport;
 };
 
 //-------------------------------- Autres définitions dépendantes de <Ensemble>
 
-#endif // TRAJETSIMPLE_H
-
+#endif // TRAJETSSIMPLE_H
 

@@ -35,14 +35,14 @@ using namespace std;
 		}
 	}
 
+
 	void LinkedList::Afficher() const
 	{
 		Data * c = head;
   		while(c != NULL) {
-    			cout << c -> current.Afficher() << "  " << endl;
+    			cout << c -> current->Afficher() << "  " << endl;
     			c = c -> next;
   		}
-  		printf("\n");
 	}
 
 	bool LinkedList::Contains(Trajet & unTrajet) const

@@ -1,6 +1,7 @@
-//---------- Interface de la classe <Trajet> (fichier Trajet.h) ----------->
+/---------- Interface de la classe <Trajet> (fichier Trajet.h) ----------->
 #if ! defined ( TRAJET_H )
 #define TRAJET_H
+
 //--------------------------------------------------- Interfaces utilisées
 
 //------------------------------------------------------------- Constantes
@@ -20,19 +21,19 @@ class Trajet
 public:
 //----------------------------------------------------- Méthodes publiques
 
-    void Afficher () const;
+    virtual void Afficher () const= 0;
     // Mode d'emploi :
     // Affiche les attributs d'un trajet (villeDepart et villeArrivee)
     // Contrat :
     //
 
-    char * getterVilleDepart () const;
+    virtual const char * getterVilleDepart () const;
     // Mode d'emploi :
     // Méthode permettant d'accéder à l'attribut protégé villeDepart
     // Contrat :
     //
-<<<<<<< HEAD
-    char * getterVilleArrivee () const;
+
+   virtual const char * getterVilleArrivee () const;
     // Mode d'emploi :
     // Méthode permettant d'accéder à l'attribut protégé villeArrivee
     // Contrat :
@@ -57,7 +58,7 @@ protected:
     //
 */
 
-    Trajet ();
+    /* Trajet ();*/
     // Mode d'emploi :
     // Constructeur par défault
     // Contrat :
@@ -66,13 +67,13 @@ protected:
 
     virtual ~Trajet ( );
     // Mode d'emploi :
-    //
+//
     // Contrat :
     //
 
 //----------------------------------------------------- Attributs protégés
-char * villeDepart;
-char * villeArrivee;
+const char * villeDepart;
+const char * villeArrivee;
 };
 
 //-------------------------------- Autres définitions dépendantes de <Ensemble>
@@ -80,7 +81,3 @@ char * villeArrivee;
 #endif // TRAJET_H
 
 
-=======
-}
-#endif //Trajet.h
->>>>>>> e44c4b74710811ea1b227d0c577a11d0917496ca

@@ -1,4 +1,4 @@
-//---------- Réalisation de la classe <TrajetCompose> (fichier TrajetCompose.cpp) ------->
+//---------- Réalisation de la classe <TrajetCompose> (fichier TrajetCompose.cp>
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -15,23 +15,17 @@ using namespace std;
 //----------------------------------------------------- Méthodes publiques
 
 void TrajetCompose::Afficher () const{
-Data * c1= listeTrajet.head;
-int i=1;
-while (c1 != NULL){
-        cout << " -  Trajet n°" << i << "\r\n";
-        (c1->current)->Afficher();
-        c1=c1->next;
-        i++;
-}
+cout << "Affichage du trajet composé ;\n" ;
+listeTrajet->Afficher();
 }
 
-LinkedList TrajetCompose::getterListeTrajet () const {
+LinkedList * TrajetCompose::getterListeTrajet () const {
         return listeTrajet;
 }
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-/* TrajetCompose & TrajetCompose::operator = ( const TrajetCompose & unTrajetCompose )
+/* TrajetCompose & TrajetCompose::operator = ( const TrajetCompose & unTrajetCo>
 // Algorithme :
 //
 {
@@ -49,25 +43,26 @@ LinkedList TrajetCompose::getterListeTrajet () const {
 } //----- Fin de TrajetCompose (constructeur de copie)
 */
 
-TrajetCompose::TrajetCompose (LinkedList & ll )
+TrajetCompose::TrajetCompose (LinkedList * ll )
 // Algorithme :
 //
 {
 #ifdef MAP
     cout << "Appel au constructeur de <TrajetCompose>" << endl;
 #endif
-Data * c1 = ll.head;
-Data * c2 = listeTrajet.head;
-Data * c3;
-while (c1 != NULL){
-        c3=c2;
-        c2=c2->next;
-        c3=c1;
-        c1=c1->next;
-}
+listeTrajet = ll;
 } //----- Fin de TrajetCompose
+
+TrajetCompose::~TrajetCompose ( )
+// Algorithme :
+//
+{
+#ifdef MAP
+    cout << "Appel au destructeur de <TrajetCompose>" << endl;
+#endif
+} //----- Fin de ~TrajetCompose
+
+
 //------------------------------------------------------------------ PRIVE
 
 //----------------------------------------------------- Méthodes protégées
-
-

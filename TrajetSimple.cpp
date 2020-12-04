@@ -1,4 +1,4 @@
-//---------- Réalisation de la classe <TrajetSimple> (fichier TrajetSimple.cpp) --->
+//---------- Réalisation de la classe <TrajetSimple> (fichier TrajetSimple.cpp)>
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -20,18 +20,17 @@ void TrajetSimple::Afficher () const{
         cout << "Moyen de transport :" << moyenTransport << "\r\n";
 }
 
-char * TrajetSimple::getterMoyenTransport () const {
+const char * TrajetSimple::getterMoyenTransport () const {
         return moyenTransport;
 }
 
 //------------------------------------------------- Surcharge d'opérateurs
-/* TrajetSimple & TrajetSimple::operator = ( const TrajetSimple & unTrajetSimple )
+/* TrajetSimple & TrajetSimple::operator = ( const TrajetSimple & unTrajetSimpl>
 // Algorithme :
 //
 {
 } //----- Fin de operator =
 */
-
 //-------------------------------------------- Constructeurs - destructeur
 /*  TrajetSimple::TrajetSimple ( const TrajetSimple & unTrajetSimple )
 // Algorithme :
@@ -43,7 +42,7 @@ char * TrajetSimple::getterMoyenTransport () const {
 } //----- Fin de TrajetSimple (constructeur de copie)
 */
 
-TrajetSimple::TrajetSimple (char * vd, char* va, char* mt )
+TrajetSimple::TrajetSimple (const char * vd,const char* va,const char* mt )
 // Algorithme :
 //
 {
@@ -63,6 +62,7 @@ TrajetSimple::~TrajetSimple ( )
     cout << "Appel au destructeur de <TrajetSimple>" << endl;
 #endif
 } //----- Fin de ~TrajetSimple
+
 
 
 //------------------------------------------------------------------ PRIVE
