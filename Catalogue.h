@@ -1,14 +1,14 @@
 /*************************************************************************
-                           Data  -  description
+                           Catalogue  -  description
                              -------------------
     début                : $DATE$
     copyright            : (C) $YEAR$ par $AUTHOR$
     e-mail               : $EMAIL$
 *************************************************************************/
 
-//---------- Interface de la classe <LinkedList> (fichier Data.h) ----------------
-#if ! defined ( DATA_H )
-#define DATA_H
+//---------- Interface de la classe <Catalogue> (fichier Catalogue.h) ----------------
+#if ! defined ( CATALOGUE_H )
+#define CATALOGUE_H
 //--------------------------------------------------- Interfaces utilisées
 
 //------------------------------------------------------------- Constantes
@@ -16,40 +16,48 @@
 //------------------------------------------------------------------ Types
 
 //------------------------------------------------------------------------
-// Rôle de la classe <DATA>
+// Rôle de la classe <CATALOGUE>
 //
 //
 //------------------------------------------------------------------------
 
-class Data
+class Catalogue
 {
 //----------------------------------------------------------------- PUBLIC
+
 public:
-	const int * current;
-	Data * next;
 //----------------------------------------------------- Méthodes publiques
 		
 // type Méthode ( liste des paramètres );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
-
-
-//-------------------------------------------- Constructeurs - destructeur
-	Data(const int * unTrajet);
+	void Ajouter(const Trajet * unTrajet);
+	void Recherches(const char * vd, const char * va) const;
+	void Recherchea(const char * vd, const char * va) const;
+	void Afficher() const;
 	// Mode d'emploi :
-	// Construis un cellule de donnees utilisee pour notre LinkedList
 	//
-	//Destructeur de la Classe par defaut
+	// Contrat :
+	//
+//-------------------------------------------- Constructeurs - destructeur
+	Catalogue();
+	// Mode d'emploi :
+	//Constructeur de la classe Catalogue
+	// Contrat :
+	//
+
+	~Catalogue();
+	// Mode d'emploi :
+	//Destructeur de la classe Catalogue
+
 //------------------------------------------------------------------ PRIVE
 
 protected:
 //----------------------------------------------------- Méthodes protégées
-//----------------------------------------------------- Attributs protégés	
+	rechercheRecurrente(LinkedList & pp, const char * va) const;
+//----------------------------------------------------- Attributs protégés
+	LinkedList * listeTrajets;
 };
 
-//-------------------------------- Autres définitions dépendantes de <Data>
+//-------------------------------- Autres définitions dépendantes de <Catalogue>
 
-#endif // DATA_H
+#endif // CATALOGUE_H
 

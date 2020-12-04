@@ -44,29 +44,59 @@ using namespace std;
   		}
   		printf("\n");
 	}
-//-------------------------------------------- Constructeurs - destructeur
-LinkedList::LinkedList()
-{
-	head = NULL;
-	tail = NULL;
-	#ifdef MAP
-		cout << "Appel au constructeur de <LinkedList>" << endl;
-	#endif
-} //----- Fin de LinkedList
 
-LinkedList::~LinkedList()
-{
-	Data * c1 = head;
-	Data * c2 = c1;
-  	while(c1 != NULL) {
-    		c2 = c1 -> next; 
-		delete c1;
-		c1 = c2;
-  	}
-	#ifdef MAP
-		cout << "Appel au destructeur de <LinkedList>" << endl;
-	#endif
-} //----- Fin de ~LinkedList
+	bool LinkedList::Contains(Trajet & unTrajet) const
+	{
+		Data * c = head;
+  		while(c != NULL) {
+    			if(*(c -> current) == unTrajet){
+				return true;
+			}
+    			c = c -> next;
+  		}
+		return false;
+	}
+
+//-------------------------------------------- Constructeurs - destructeur
+	LinkedList::LinkedList()
+	{
+		head = NULL;
+		tail = NULL;
+		#ifdef MAP
+			cout << "Appel au constructeur de <LinkedList>" << endl;
+		#endif
+	} //----- Fin de LinkedList
+
+	LinkedList::LinkedList(const LinkedList & ll)
+	{
+		head = NULL;
+		tail = NULL;
+
+		Data *c = ll.head;
+		while(c != NULL){
+			if(TrajetSimple * test = dynamic_cast<TrajetSimple*>(c->current)){
+				TrajetSimple traj = new TrajetSimple(*(c -> current));
+			}else if(TrajetCompose* test = dynamic_cast<TrajetCompose*>(c->current){
+				TrajetComopose traj = new TrajetCompose(*(c -> current));
+			}
+			ajouter(traj)
+			c = c -> next;
+		}	
+	}
+
+	LinkedList::~LinkedList()
+	{
+		Data * c1 = head;
+		Data * c2 = c1;
+ 	 	while(c1 != NULL) {
+	    		c2 = c1 -> next; 
+			delete c1;
+			c1 = c2;
+	  	}
+		#ifdef MAP
+			cout << "Appel au destructeur de <LinkedList>" << endl;
+		#endif
+	} //----- Fin de ~LinkedList
 
 
 //------------------------------------------------------------------ PRIVE

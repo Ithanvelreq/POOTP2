@@ -12,7 +12,8 @@
 //--------------------------------------------------- Interfaces utilisées
 
 #include "Data.h"
-#incluse "Catalogue.h"
+#include "Trajet.h"
+#include "Catalogue.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -35,6 +36,7 @@ public:
 
 	void Ajouter (const Trajet * unTrajet);
 	void Afficher() const;
+	bool Contains(const Trajet & unTrajet)const;
 	// Mode d'emploi :
 	//
 	// Contrat :
@@ -45,6 +47,10 @@ public:
 	LinkedList();
 	// Mode d'emploi :
 	//Constructeur de la classe LinkedList
+
+	LinkedList(const LinkedList & ll);
+	//Mode d'emploi
+	//Constructeur de copie de la classe LinkedList
 
 	~LinkedList();
 	// Mode d'emploi :
