@@ -18,6 +18,8 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "LinkedList.h"
 #include "Catalogue.h"
+#include "TrajetCompose.h"
+#include "TrajetSimple.h"
 
 //------------------------------------------------------------- Constantes
 
@@ -31,9 +33,9 @@ void Catalogue::Recherches(const char * vd, const char * va) const
 {
 		Data * c = listeTrajets->head;
   		while(c != NULL) {
-    			if(!strcmp(*(c -> current).gettervilleDepart(), vd){
-				if(!strcmp(*(c -> current).gettervilleArrivee(), va){
-					*(c -> current).Afficher();
+    			if(!strcmp(c -> current->getterVilleDepart(), vd)){
+				if(!strcmp(c -> current->getterVilleArrivee(), va)){
+					c -> current -> Afficher();
 				}
 			}
     			c = c -> next;
@@ -43,9 +45,21 @@ void Catalogue::Recherchea(const char * vd, const char * va) const
 {
 	Data * c = listeTrajets->head;
 	while(c != NULL){
-		if(!strcmp(*(c -> current).gettervilleDepart(), vd)){
-			LinkedList pp = new LinkedList;
-			pp.Ajouter(*(c -> current));
+		if(!strcmp(c -> current->getterVilleDepart(), vd)){
+			LinkedList * pp = new LinkedList();
+
+			//creer copie de c->current
+			const Trajet * traj = c->current;
+                        Trajet * unTraj = const_cast<Trajet*>(traj);
+                        if(TrajetSimple * test = dynamic_cast<TrajetSimple*>(unTraj)){
+                                TrajetSimple * trajA = new TrajetSimple(*test);
+                                pp->Ajouter(trajA);
+                                //trajA->Afficher();
+                        }else if(TrajetCompose* test = dynamic_cast<TrajetCompose*>(unTraj)){
+                                TrajetCompose * trajA = new TrajetCompose(*test);
+                                pp->Ajouter(trajA);
+                                //trajA->Afficher();
+                        }
 			rechercheRecurrente(pp, va);
 			delete pp;
 		}
@@ -54,12 +68,12 @@ void Catalogue::Recherchea(const char * vd, const char * va) const
 }
 			
 void Catalogue::Afficher() const{
-	ListreTrajets.Afficher();
+	listeTrajets->Afficher();
 }
 //-------------------------------------------- Constructeurs - destructeur
 Catalogue::Catalogue()
 {
-	LinkedList * listeTrajets = new * LinkedList;
+	listeTrajets = new LinkedList;
 	#ifdef MAP
 		cout << "Appel au constructeur de <Catalogue>" << endl;
 	#endif
@@ -68,7 +82,7 @@ Catalogue::Catalogue()
 
 Catalogue::~Catalogue()
 {
-	delete *ListeTrajets;
+	delete listeTrajets;
 	#ifdef MAP
 		cout << "Appel au destructeur de <Catalogue>" << endl;
 	#endif
@@ -78,19 +92,39 @@ Catalogue::~Catalogue()
 //------------------------------------------------------------------ PRIVE
 
 //----------------------------------------------------- Méthodes protégées
-void Catalogue::rechercheRecurrente(LinkedList & pp, const char * va) const
+void Catalogue::rechercheRecurrente(LinkedList * pp, const char * va) const
 {
 	Data * c = listeTrajets -> head;
 	while(c != NULL){
-		if(!strcmp(*(pp.tail -> current).gettervilleArrive(), *(c -> current).gettervilleDepart())){
-			if(!pp.Contains(*(c -> current))){
-				if((!strcmp(*(c -> current).gettervilleArivee(), vd)){
-					pp.Ajouter(i);
-					pp.afficher();
+		if(!strcmp(pp-> tail -> current->getterVilleArrivee(), c -> current->getterVilleDepart())){
+			if(!pp->Contains(c -> current)){
+				if(!strcmp(c -> current->getterVilleArrivee(), va)){
+
+					//creer copie de c->current
+					const Trajet * traj = c->current;
+                        		Trajet * unTraj = const_cast<Trajet*>(traj);
+                        		if(TrajetSimple * test = dynamic_cast<TrajetSimple*>(unTraj)){
+                                		TrajetSimple * trajA = new TrajetSimple(*test);
+                                		pp->Ajouter(trajA);
+                        		}else if(TrajetCompose* test = dynamic_cast<TrajetCompose*>(unTraj)){
+                                		TrajetCompose * trajA = new TrajetCompose(*test);
+                                		pp->Ajouter(trajA);
+                        		}
+					pp->Afficher();
 				}else{
-					ppp = new LinkedList(pp);
-					ppp.Ajouter(i);
-					rechercheRecurrente(ppp);
+					LinkedList *ppp = new LinkedList(*pp);
+
+					//creer copie de c->current
+					const Trajet * traj = c->current;
+                        		Trajet * unTraj = const_cast<Trajet*>(traj);
+                        		if(TrajetSimple * test = dynamic_cast<TrajetSimple*>(unTraj)){
+                                		TrajetSimple * trajA = new TrajetSimple(*test);
+                                		ppp->Ajouter(trajA);
+                        		}else if(TrajetCompose* test = dynamic_cast<TrajetCompose*>(unTraj)){
+                                		TrajetCompose * trajA = new TrajetCompose(*test);
+                                		ppp->Ajouter(trajA);
+                        }
+					rechercheRecurrente(ppp, va);
 					delete ppp;
 				}
 			}

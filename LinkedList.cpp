@@ -66,19 +66,18 @@ using namespace std;
                 }
                 return true;
         }
-        /*
+
         bool LinkedList::Contains(const Trajet * unTrajet) const
-        {
-                Data * c = head;
-                while(c != NULL) {
-                        if(*(c -> current) == *unTrajet){
-                                return true;
-                        }
-                        c = c -> next;
-                }
-                return false;
-        }
-        */
+	{
+		Data * c = head;
+  		while(c != NULL) {
+    			if(*(c -> current) == unTrajet){
+				return true;
+			}
+    			c = c -> next;
+  		}
+		return false;
+	}
 //-------------------------------------------- Constructeurs - destructeur
         LinkedList::LinkedList()
         {

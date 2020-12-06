@@ -53,7 +53,7 @@ public:
 
 protected:
 //----------------------------------------------------- Méthodes protégées
-	void rechercheRecurrente(LinkedList & pp, const char * va) const;
+	void rechercheRecurrente(LinkedList * pp, const char * va) const;
 //----------------------------------------------------- Attributs protégés
 	LinkedList * listeTrajets;
 };
