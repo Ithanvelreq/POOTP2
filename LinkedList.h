@@ -35,6 +35,7 @@ public:
 
 	void Ajouter (const Trajet * unTrajet);
 	void Afficher() const;
+	bool operator == (const LinkedList & ll) const;
 	bool Contains(const Trajet * unTrajet)const;
 	// Mode d'emploi :
 	//
@@ -57,6 +58,7 @@ public:
 
 //------------------------------------------------------------------ PRIVE
 	friend class Catalogue;
+	friend class TrajetCompose;
 protected:
 //----------------------------------------------------- Méthodes protégées
 //----------------------------------------------------- Attributs protégés	

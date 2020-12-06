@@ -37,11 +37,11 @@ public:
     //
 
 //------------------------------------------------- Surcharge d'opérateurs
-/*    TrajetCompose & operator = ( const TrajetCompose & unTrajetCompose );
+    bool operator == ( const Trajet * unTrajet )const;
     // Mode d'emploi :
     //
     // Contrat :
-*/
+
 
 
 //-------------------------------------------- Constructeurs - destructeur

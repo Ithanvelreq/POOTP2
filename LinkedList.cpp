@@ -47,6 +47,23 @@ using namespace std;
     			c = c -> next;
   		}
 	}
+
+	bool LinkedList::operator==(const LinkedList & ll)const
+	{
+		Data * c1 = head;
+		Data * c2 = ll.head;
+  		while(c1 != NULL && c2 != NULL) {
+    			if(!(*(c1 -> current) == (c2 -> current) )){
+				return false;
+			}
+    			c1 = c1 -> next;
+			c2 = c2 -> next;
+  		}
+		if(c1 != NULL || c2 != NULL){
+			return false;
+		}
+		return true;
+	}
 	/*
 	bool LinkedList::Contains(const Trajet * unTrajet) const
 	{

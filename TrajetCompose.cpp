@@ -25,12 +25,22 @@ LinkedList * TrajetCompose::getterListeTrajet () const {
 
 
 //------------------------------------------------- Surcharge d'opérateurs
-/* TrajetCompose & TrajetCompose::operator = ( const TrajetCompose & unTrajetCo>
+   bool TrajetCompose::operator == ( const Trajet * unTrajet) const
 // Algorithme :
 //
 {
-} //----- Fin de operator =
-*/
+	const Trajet * traj= unTrajet;
+	Trajet * unTraj = const_cast<Trajet*>(traj);
+	if(TrajetCompose * trajCom = dynamic_cast<TrajetCompose*>(unTraj)){
+		if(listeTrajet == trajCom->getterListeTrajet()){
+			return true;
+		}else{
+			return false;
+		}
+	}else{
+		return false;
+	}
+} //----- Fin de operator ==
 
 //-------------------------------------------- Constructeurs - destructeur
 /*  TrajetCompose::TrajetCompose ( const TrajetCompose & unTrajetCompose )
