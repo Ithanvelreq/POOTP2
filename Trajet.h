@@ -21,7 +21,7 @@ class Trajet
 public:
 //----------------------------------------------------- Méthodes publiques
 
-    virtual void Afficher () const= 0;
+    virtual void Afficher () const = 0;
     // Mode d'emploi :
     // Affiche les attributs d'un trajet (villeDepart et villeArrivee)
     // Contrat :
@@ -46,10 +46,6 @@ public:
     // Contrat :
 
 
-protected:
-//----------------------------------------------------- Méthodes protégées
-
-
 //-------------------------------------------- Constructeurs - destructeur
 /*    Trajet ( const Trajet & unTrajet );
     // Mode d'emploi (constructeur de copie) :
@@ -70,7 +66,8 @@ protected:
 //
     // Contrat :
     //
-
+protected:
+//----------------------------------------------------- Méthodes protégées
 //----------------------------------------------------- Attributs protégés
 const char * villeDepart;
 const char * villeArrivee;

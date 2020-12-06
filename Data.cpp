@@ -31,6 +31,11 @@ Data::Data(const Trajet * unTrajet)
 		cout << "Appel au constructeur de <Data>" << endl;
 	#endif
 } //----- Fin de Data
+
+Data::~Data()
+{
+	delete current;
+}
 //------------------------------------------------------------------ PRIVE
 
 //----------------------------------------------------- Méthodes protégées

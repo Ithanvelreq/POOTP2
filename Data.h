@@ -41,7 +41,7 @@ public:
 	// Mode d'emploi :
 	// Construis un cellule de donnees utilisee pour notre LinkedList
 	//
-	//~Data();
+	~Data();
 	// Mode d'emploi :
 	// Detruit une cellule de donnes pour notre LinkedList
 //------------------------------------------------------------------ PRIVE

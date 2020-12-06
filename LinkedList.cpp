@@ -19,7 +19,7 @@ using namespace std;
 #include "Data.h"
 #include "Trajet.h"
 #include "TrajetSimple.h"
-//#include "TrajetCompose.h"
+#include "TrajetCompose.h"
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC		
@@ -43,7 +43,8 @@ using namespace std;
 	{
 		Data * c = head;
   		while(c != NULL) {
-    			c -> current->Afficher();
+    			c -> current ->Afficher(); //here
+			//cout << "ororo"<<endl;	
     			c = c -> next;
   		}
 	}
@@ -64,19 +65,19 @@ using namespace std;
 		}
 		return true;
 	}
-	/*
+	
 	bool LinkedList::Contains(const Trajet * unTrajet) const
 	{
 		Data * c = head;
   		while(c != NULL) {
-    			if(*(c -> current) == *unTrajet){
+    			if(*(c -> current) == unTrajet){
 				return true;
 			}
     			c = c -> next;
   		}
 		return false;
 	}
-	*/
+	
 //-------------------------------------------- Constructeurs - destructeur
 	LinkedList::LinkedList()
 	{
@@ -86,7 +87,7 @@ using namespace std;
 			cout << "Appel au constructeur de <LinkedList>" << endl;
 		#endif
 	} //----- Fin de LinkedList
-	/*
+
 	LinkedList::LinkedList(const LinkedList & ll)
 	{
 		head = NULL;
@@ -94,15 +95,19 @@ using namespace std;
 
 		Data *c = ll.head;
 		while(c != NULL){
-			if(TrajetSimple * test = dynamic_cast<TrajetSimple*>(c->current)){
-				TrajetSimple traj = new TrajetSimple(*(c -> current));
-			}else if(TrajetCompose* test = dynamic_cast<TrajetCompose*>(c->current){
-				TrajetComopose traj = new TrajetCompose(*(c -> current));
+			const Trajet * temp = c->current;
+			Trajet * unTrajet = const_cast<Trajet*>(temp);
+			if(TrajetSimple * test = dynamic_cast<TrajetSimple*>(unTrajet)){
+				TrajetSimple * trajA = new TrajetSimple(*test);
+				Ajouter(trajA);
+			}else if(TrajetCompose* test = dynamic_cast<TrajetCompose*>(unTrajet)){
+				TrajetCompose * trajA = new TrajetCompose(*test);
+				Ajouter(trajA);
 			}
-			ajouter(traj)
 			c = c -> next;
-		}	
-	}*/
+		}
+		Afficher();	
+	}
 
 	LinkedList::~LinkedList()
 	{
