@@ -34,13 +34,12 @@ public:
     // Méthode permettant d'accéder à l'attribut protégé moyenTransport
     // Contrat :
     //
-
 //------------------------------------------------- Surcharge d'opérateurs
-/*    TrajetSimple & operator = ( const TrajetSimple & unTrajetSimple );
+    bool operator==(const Trajet * unTrajet) const;
     // Mode d'emploi :
     //
     // Contrat :
-*/
+
 
 
 //-------------------------------------------- Constructeurs - destructeur
@@ -57,6 +56,7 @@ public:
     // d'arrivée et un moyen de transport
     // Contrat :
     //
+    //TrajetSimple(const TrajetSimple & unTrajet);
 
 
     virtual ~TrajetSimple ( );

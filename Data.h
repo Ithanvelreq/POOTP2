@@ -10,7 +10,7 @@
 #if ! defined ( DATA_H )
 #define DATA_H
 //--------------------------------------------------- Interfaces utilisées
-
+#include "Trajet.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -25,7 +25,7 @@ class Data
 {
 //----------------------------------------------------------------- PUBLIC
 public:
-	const int * current;
+	const Trajet * current;
 	Data * next;
 //----------------------------------------------------- Méthodes publiques
 		
@@ -37,11 +37,13 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-	Data(const int * unTrajet);
+	Data(const Trajet * unTrajet);
 	// Mode d'emploi :
 	// Construis un cellule de donnees utilisee pour notre LinkedList
 	//
-	//Destructeur de la Classe par defaut
+	//~Data();
+	// Mode d'emploi :
+	// Detruit une cellule de donnes pour notre LinkedList
 //------------------------------------------------------------------ PRIVE
 
 protected:

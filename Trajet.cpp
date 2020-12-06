@@ -27,7 +27,7 @@ const char * Trajet::getterVilleArrivee () const {
 }
 
 //------------------------------------------------- Surcharge d'opérateurs
-/* Trajet & Trajet::operator = ( const Trajet & unTrajet )
+/* bool Trajet::operator = ( const Trajet * unTrajet )
 // Algorithme :
 //
 {

@@ -17,6 +17,9 @@ using namespace std;
 //------------------------------------------------------ Include personnel
 #include "LinkedList.h"
 #include "Data.h"
+#include "Trajet.h"
+#include "TrajetSimple.h"
+//#include "TrajetCompose.h"
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC		
@@ -40,23 +43,23 @@ using namespace std;
 	{
 		Data * c = head;
   		while(c != NULL) {
-    			cout << c -> current->Afficher() << "  " << endl;
+    			c -> current->Afficher();
     			c = c -> next;
   		}
 	}
-
-	bool LinkedList::Contains(Trajet & unTrajet) const
+	/*
+	bool LinkedList::Contains(const Trajet * unTrajet) const
 	{
 		Data * c = head;
   		while(c != NULL) {
-    			if(*(c -> current) == unTrajet){
+    			if(*(c -> current) == *unTrajet){
 				return true;
 			}
     			c = c -> next;
   		}
 		return false;
 	}
-
+	*/
 //-------------------------------------------- Constructeurs - destructeur
 	LinkedList::LinkedList()
 	{
@@ -66,7 +69,7 @@ using namespace std;
 			cout << "Appel au constructeur de <LinkedList>" << endl;
 		#endif
 	} //----- Fin de LinkedList
-
+	/*
 	LinkedList::LinkedList(const LinkedList & ll)
 	{
 		head = NULL;
@@ -82,7 +85,7 @@ using namespace std;
 			ajouter(traj)
 			c = c -> next;
 		}	
-	}
+	}*/
 
 	LinkedList::~LinkedList()
 	{

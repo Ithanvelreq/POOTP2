@@ -10,7 +10,8 @@
 #if ! defined ( CATALOGUE_H )
 #define CATALOGUE_H
 //--------------------------------------------------- Interfaces utilisées
-
+#include "LinkedList.h"
+#include "Trajet.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -52,7 +53,7 @@ public:
 
 protected:
 //----------------------------------------------------- Méthodes protégées
-	rechercheRecurrente(LinkedList & pp, const char * va) const;
+	void rechercheRecurrente(LinkedList & pp, const char * va) const;
 //----------------------------------------------------- Attributs protégés
 	LinkedList * listeTrajets;
 };

@@ -13,7 +13,6 @@
 
 #include "Data.h"
 #include "Trajet.h"
-#include "Catalogue.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -36,7 +35,7 @@ public:
 
 	void Ajouter (const Trajet * unTrajet);
 	void Afficher() const;
-	bool Contains(const Trajet & unTrajet)const;
+	bool Contains(const Trajet * unTrajet)const;
 	// Mode d'emploi :
 	//
 	// Contrat :

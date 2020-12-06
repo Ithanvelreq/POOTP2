@@ -1,4 +1,4 @@
-/---------- Interface de la classe <Trajet> (fichier Trajet.h) ----------->
+//---------- Interface de la classe <Trajet> (fichier Trajet.h) ----------->
 #if ! defined ( TRAJET_H )
 #define TRAJET_H
 
@@ -40,11 +40,11 @@ public:
     //
 
 //------------------------------------------------- Surcharge d'opérateurs
-/*    Trajet & operator = ( const Trajet & unTrajet );
+    virtual bool operator == ( const Trajet * unTrajet )const = 0;
     // Mode d'emploi :
     //
     // Contrat :
-*/
+
 
 protected:
 //----------------------------------------------------- Méthodes protégées

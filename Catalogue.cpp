@@ -23,11 +23,11 @@ using namespace std;
 
 //----------------------------------------------------------------- PUBLIC		
 //----------------------------------------------------- Méthodes publiques
-void Ajouter(const Trajet * unTrajet)
+void Catalogue::Ajouter(const Trajet * unTrajet)
 {
 	listeTrajets->Ajouter(unTrajet);
 }
-void Recherches(const char * vd, const char * va) const
+void Catalogue::Recherches(const char * vd, const char * va) const
 {
 		Data * c = listeTrajets->head;
   		while(c != NULL) {
@@ -39,7 +39,7 @@ void Recherches(const char * vd, const char * va) const
     			c = c -> next;
   		}
 }
-void Recherchea(const char * vd, const char * va) const
+void Catalogue::Recherchea(const char * vd, const char * va) const
 {
 	Data * c = listeTrajets->head;
 	while(c != NULL){
@@ -53,7 +53,7 @@ void Recherchea(const char * vd, const char * va) const
 	}
 }
 			
-void Afficher() const{
+void Catalogue::Afficher() const{
 	ListreTrajets.Afficher();
 }
 //-------------------------------------------- Constructeurs - destructeur
@@ -78,7 +78,7 @@ Catalogue::~Catalogue()
 //------------------------------------------------------------------ PRIVE
 
 //----------------------------------------------------- Méthodes protégées
-rechercheRecurrente(LinkedList & pp, const char * va) const
+void Catalogue::rechercheRecurrente(LinkedList & pp, const char * va) const
 {
 	Data * c = listeTrajets -> head;
 	while(c != NULL){
