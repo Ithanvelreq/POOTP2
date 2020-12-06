@@ -29,29 +29,33 @@ LinkedList * TrajetCompose::getterListeTrajet () const {
 // Algorithme :
 //
 {
-	const Trajet * traj= unTrajet;
-	Trajet * unTraj = const_cast<Trajet*>(traj);
-	if(TrajetCompose * trajCom = dynamic_cast<TrajetCompose*>(unTraj)){
-		if(listeTrajet == trajCom->getterListeTrajet()){
-			return true;
-		}else{
-			return false;
-		}
-	}else{
-		return false;
-	}
+        const Trajet * traj= unTrajet;
+        Trajet * unTraj = const_cast<Trajet*>(traj);
+        if(TrajetCompose * trajCom = dynamic_cast<TrajetCompose*>(unTraj)){
+                if(listeTrajet == trajCom->getterListeTrajet()){
+                        return true;
+                }else{
+                        return false;
+                }
+        }else{
+                return false;
+        }
 } //----- Fin de operator ==
 
 //-------------------------------------------- Constructeurs - destructeur
-/*  TrajetCompose::TrajetCompose ( const TrajetCompose & unTrajetCompose )
+TrajetCompose::TrajetCompose ( const TrajetCompose & unTrajetCompose )
 // Algorithme :
 //
 {
 #ifdef MAP
     cout << "Appel au constructeur de copie de <TrajetCompose>" << endl;
 #endif
+LinkedList* llcopie = new LinkedList(*unTrajetCompose.getterListeTrajet());
+listeTrajet=llcopie;
+villeDepart = unTrajetCompose.getterVilleDepart();
+villeArrivee = unTrajetCompose.getterVilleArrivee();
 } //----- Fin de TrajetCompose (constructeur de copie)
-*/
+
 
 TrajetCompose::TrajetCompose (LinkedList * ll )
 // Algorithme :
@@ -76,3 +80,4 @@ TrajetCompose::~TrajetCompose ( )
 //------------------------------------------------------------------ PRIVE
 
 //----------------------------------------------------- Méthodes protégées
+
