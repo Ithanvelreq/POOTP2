@@ -69,8 +69,8 @@ public:
 protected:
 //----------------------------------------------------- Méthodes protégées
 //----------------------------------------------------- Attributs protégés
-const char * villeDepart;
-const char * villeArrivee;
+char * villeDepart;
+char * villeArrivee;
 };
 
 //-------------------------------- Autres définitions dépendantes de <Ensemble>

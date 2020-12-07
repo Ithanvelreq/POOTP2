@@ -69,7 +69,7 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
-const char * moyenTransport;
+char * moyenTransport;
 };
 
 //-------------------------------- Autres définitions dépendantes de <Ensemble>

@@ -4,6 +4,7 @@
 
 //-------------------------------------------------------- Include système
 #include <iostream>
+#include <cstring>
 using namespace std;
 //------------------------------------------------------ Include personnel
 #include "TrajetCompose.h"
@@ -29,17 +30,17 @@ LinkedList * TrajetCompose::getterListeTrajet () const {
 // Algorithme :
 //
 {
-        const Trajet * traj= unTrajet;
-        Trajet * unTraj = const_cast<Trajet*>(traj);
-        if(TrajetCompose * trajCom = dynamic_cast<TrajetCompose*>(unTraj)){
-                if(listeTrajet == trajCom->getterListeTrajet()){
-                        return true;
-                }else{
-                        return false;
-                }
-        }else{
-                return false;
-        }
+	const Trajet * traj= unTrajet;
+	Trajet * unTraj = const_cast<Trajet*>(traj);
+	if(TrajetCompose * trajCom = dynamic_cast<TrajetCompose*>(unTraj)){
+		if(listeTrajet == trajCom->getterListeTrajet()){
+			return true;
+		}else{
+			return false;
+		}
+	}else{
+		return false;
+	}
 } //----- Fin de operator ==
 
 //-------------------------------------------- Constructeurs - destructeur
@@ -52,10 +53,9 @@ TrajetCompose::TrajetCompose ( const TrajetCompose & unTrajetCompose )
 #endif
 LinkedList* llcopie = new LinkedList(*unTrajetCompose.getterListeTrajet());
 listeTrajet=llcopie;
-villeDepart = unTrajetCompose.getterVilleDepart();
-villeArrivee = unTrajetCompose.getterVilleArrivee();
+strcpy(villeDepart, unTrajetCompose.getterVilleDepart());
+strcpy(villeArrivee, unTrajetCompose.getterVilleArrivee());
 } //----- Fin de TrajetCompose (constructeur de copie)
-
 
 TrajetCompose::TrajetCompose (LinkedList * ll )
 // Algorithme :
@@ -65,12 +65,19 @@ TrajetCompose::TrajetCompose (LinkedList * ll )
     cout << "Appel au constructeur de <TrajetCompose>" << endl;
 #endif
 listeTrajet = ll;
+villeDepart = new char[20];
+villeArrivee = new char[20];
+strcpy(villeDepart, ll->head->current->getterVilleDepart());
+strcpy(villeArrivee, ll->tail->current->getterVilleArrivee());
 } //----- Fin de TrajetCompose
 
 TrajetCompose::~TrajetCompose ( )
 // Algorithme :
 //
 {
+delete listeTrajet;
+delete [] villeDepart;
+delete [] villeArrivee;
 #ifdef MAP
     cout << "Appel au destructeur de <TrajetCompose>" << endl;
 #endif
@@ -80,4 +87,3 @@ TrajetCompose::~TrajetCompose ( )
 //------------------------------------------------------------------ PRIVE
 
 //----------------------------------------------------- Méthodes protégées
-

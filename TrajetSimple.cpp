@@ -6,6 +6,7 @@
 #include <iostream>
 using namespace std;
 #include "string.h"
+#include <cstring>
 //------------------------------------------------------ Include personnel
 #include "TrajetSimple.h"
 //------------------------------------------------------------- Constantes
@@ -64,15 +65,21 @@ TrajetSimple::TrajetSimple (const char * vd,const char* va,const char* mt )
 #ifdef MAP
     cout << "Appel au constructeur de <TrajetSimple>" << endl;
 #endif
-villeDepart = vd;
-villeArrivee = va;
-moyenTransport = mt;
+villeDepart = new char[20];
+villeArrivee = new char[20];
+moyenTransport = new char[20];
+strcpy(villeDepart, vd);
+strcpy(villeArrivee, va);
+strcpy(moyenTransport, mt);
 } //----- Fin de TrajetSimple
 
 TrajetSimple::~TrajetSimple ( )
 // Algorithme :
 //
 {
+	delete [] villeDepart;
+	delete [] villeArrivee;
+	delete [] moyenTransport;
 #ifdef MAP
     cout << "Appel au destructeur de <TrajetSimple>" << endl;
 #endif

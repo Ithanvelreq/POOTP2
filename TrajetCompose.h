@@ -45,12 +45,12 @@ public:
 
 
 //-------------------------------------------- Constructeurs - destructeur
-/*    TrajetCompose ( const TrajetCompose & unTrajetCompose );
+    TrajetCompose ( const TrajetCompose & unTrajetCompose );
     // Mode d'emploi (constructeur de copie) :
     //
     // Contrat :
     //
-*/
+
 
     TrajetCompose (LinkedList * ll );
     // Mode d'emploi :
