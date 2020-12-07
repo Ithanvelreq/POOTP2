@@ -47,7 +47,7 @@ int main(){
 			cin.getline(vd, 20, ' ');
 			cin.getline(va, 20);
 			cout << "Les resultats de la recherche avance sont"<<endl;
-			catalog.Recherchea(va, vd);
+			catalog.Recherchea(vd, va);
 		}
 		cin.getline(command, 20, '\n');
 	}

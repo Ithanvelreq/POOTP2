@@ -54,11 +54,9 @@ void Catalogue::Recherchea(const char * vd, const char * va) const
                         if(TrajetSimple * test = dynamic_cast<TrajetSimple*>(unTraj)){
                                 TrajetSimple * trajA = new TrajetSimple(*test);
                                 pp->Ajouter(trajA);
-                                //trajA->Afficher();
                         }else if(TrajetCompose* test = dynamic_cast<TrajetCompose*>(unTraj)){
                                 TrajetCompose * trajA = new TrajetCompose(*test);
                                 pp->Ajouter(trajA);
-                                //trajA->Afficher();
                         }
 			rechercheRecurrente(pp, va);
 			delete pp;
@@ -123,11 +121,12 @@ void Catalogue::rechercheRecurrente(LinkedList * pp, const char * va) const
                         		}else if(TrajetCompose* test = dynamic_cast<TrajetCompose*>(unTraj)){
                                 		TrajetCompose * trajA = new TrajetCompose(*test);
                                 		ppp->Ajouter(trajA);
-                        }
+                       			}
 					rechercheRecurrente(ppp, va);
 					delete ppp;
 				}
 			}
 		}
+		c = c->next;
 	}
 }

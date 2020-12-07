@@ -53,6 +53,8 @@ TrajetCompose::TrajetCompose ( const TrajetCompose & unTrajetCompose )
 #endif
 LinkedList* llcopie = new LinkedList(*unTrajetCompose.getterListeTrajet());
 listeTrajet=llcopie;
+villeDepart = new char[20];
+villeArrivee = new char[20];
 strcpy(villeDepart, unTrajetCompose.getterVilleDepart());
 strcpy(villeArrivee, unTrajetCompose.getterVilleArrivee());
 } //----- Fin de TrajetCompose (constructeur de copie)
