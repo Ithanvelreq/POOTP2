@@ -90,6 +90,9 @@ using namespace std;
 
         LinkedList::LinkedList(const LinkedList & ll)
         {
+                #ifdef MAP
+                        cout << "Appel au destructeur de <LinkedList>" << endl;
+                #endif
                 head = NULL;
                 tail = NULL;
 

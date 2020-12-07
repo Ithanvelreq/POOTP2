@@ -1,0 +1,25 @@
+ajouts
+A G mt1
+ajouts
+A B mt2
+ajoutc
+A D mt3 then
+D E mt4 fini
+ajouts
+A E mt5
+ajouts
+B C mt6
+ajouts
+C D mt7
+ajouts
+D B mt8
+ajouts
+A F mt9
+ajouts
+F E mt10 
+afficher
+recherches
+A E
+recherchea
+A E
+bye

@@ -56,7 +56,7 @@ public:
     // d'arrivée et un moyen de transport
     // Contrat :
     //
-    //TrajetSimple(const TrajetSimple & unTrajet);
+    TrajetSimple(const TrajetSimple & unTrajet);
 
 
     virtual ~TrajetSimple ( );

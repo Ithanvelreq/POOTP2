@@ -46,18 +46,22 @@ bool TrajetSimple::operator == ( const Trajet * unTrajet)const
 
 //----- Fin de operator =
 //-------------------------------------------- Constructeurs - destructeur
-/*
+
 TrajetSimple::TrajetSimple ( const TrajetSimple & unTrajetSimple )
 // Algorithme :
 //
 {
-	TrajetSimple traj(unTrajetSimple.villeDepart, unTrajetSimple.villeArrivee, unTrajetSimple.moyenTransport);
-	return;	
+villeDepart = new char[20];
+villeArrivee = new char[20];
+moyenTransport = new char[20];
+strcpy(villeDepart, unTrajetSimple.getterVilleDepart());
+strcpy(villeArrivee, unTrajetSimple.getterVilleArrivee());
+strcpy(moyenTransport, unTrajetSimple.getterMoyenTransport());
 #ifdef MAP
     cout << "Appel au constructeur de copie de <TrajetSimple>" << endl;
 #endif
 } //----- Fin de TrajetSimple (constructeur de copie)/
-*/
+
 TrajetSimple::TrajetSimple (const char * vd,const char* va,const char* mt )
 // Algorithme :
 //
