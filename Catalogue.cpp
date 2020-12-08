@@ -43,6 +43,7 @@ void Catalogue::Recherches(const char * vd, const char * va) const
 }
 void Catalogue::Recherchea(const char * vd, const char * va) const
 {
+	Recherches(vd, va);
 	Data * c = listeTrajets->head;
 	while(c != NULL){
 		if(!strcmp(c -> current->getterVilleDepart(), vd)){
