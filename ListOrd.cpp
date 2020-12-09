@@ -23,7 +23,7 @@ void ListOrd::Ajouter(const Trajet * unTrajet)
         if(!tail){
                 tail = d;
     }else{
-                if(!strcmp(tail->current->getterVilleArrivee(),unTraje->getterVilleDepart())){
+                if(!strcmp(tail->current->getterVilleArrivee(),unTrajet->getterVilleDepart())){
                         tail->next = d;
                         tail = d;
                 }else{
