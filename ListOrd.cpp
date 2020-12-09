@@ -66,7 +66,8 @@ ListOrd::ListOrd(const ListOrd & ll)
         }
 }
 
-ListOrd::~ListOrd()
+ListOrd::~ListOrd(){}
+/*
 {
         #ifdef MAP
                 cout << "Appel au destructeur de <ListOrd>" << endl;
@@ -77,9 +78,10 @@ ListOrd::~ListOrd()
                 c2 = c1 -> next; 
                 delete c1;
                 c1 = c2;
-        }
-        
-} //----- Fin de ~ListOrd
+	}
+}
+*/        
+//----- Fin de ~ListOrd
 
 
 
