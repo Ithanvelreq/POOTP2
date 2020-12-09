@@ -51,15 +51,16 @@ TrajetSimple::TrajetSimple ( const TrajetSimple & unTrajetSimple )
 // Algorithme :
 //
 {
+#ifdef MAP
+    cout << "Appel au constructeur de copie de <TrajetSimple>" << endl;
+#endif
 villeDepart = new char[20];
 villeArrivee = new char[20];
 moyenTransport = new char[20];
 strcpy(villeDepart, unTrajetSimple.getterVilleDepart());
 strcpy(villeArrivee, unTrajetSimple.getterVilleArrivee());
 strcpy(moyenTransport, unTrajetSimple.getterMoyenTransport());
-#ifdef MAP
-    cout << "Appel au constructeur de copie de <TrajetSimple>" << endl;
-#endif
+
 } //----- Fin de TrajetSimple (constructeur de copie)/
 
 TrajetSimple::TrajetSimple (const char * vd,const char* va,const char* mt )
@@ -81,12 +82,13 @@ TrajetSimple::~TrajetSimple ( )
 // Algorithme :
 //
 {
+	#ifdef MAP
+    	cout << "Appel au destructeur de <TrajetSimple>" << endl;
+	#endif
 	delete [] villeDepart;
 	delete [] villeArrivee;
 	delete [] moyenTransport;
-#ifdef MAP
-    cout << "Appel au destructeur de <TrajetSimple>" << endl;
-#endif
+
 } //----- Fin de ~TrajetSimple
 
 

@@ -24,12 +24,12 @@ using namespace std;
 
 //-------------------------------------------- Constructeurs - destructeur
 Data::Data(const Trajet * unTrajet)
-{
-	current = unTrajet;
-	next = NULL;
+{	
 	#ifdef MAP
 		cout << "Appel au constructeur de <Data>" << endl;
 	#endif
+	current = unTrajet;
+	next = NULL;
 } //----- Fin de Data
 
 Data::~Data()

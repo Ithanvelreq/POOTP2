@@ -77,12 +77,12 @@ TrajetCompose::~TrajetCompose ( )
 // Algorithme :
 //
 {
-delete listeTrajet;
-delete [] villeDepart;
-delete [] villeArrivee;
 #ifdef MAP
     cout << "Appel au destructeur de <TrajetCompose>" << endl;
 #endif
+delete listeTrajet;
+delete [] villeDepart;
+delete [] villeArrivee;
 } //----- Fin de ~TrajetCompose
 
 

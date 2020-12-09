@@ -71,20 +71,20 @@ void Catalogue::Afficher() const{
 }
 //-------------------------------------------- Constructeurs - destructeur
 Catalogue::Catalogue()
-{
-	listeTrajets = new LinkedList;
+{	
 	#ifdef MAP
 		cout << "Appel au constructeur de <Catalogue>" << endl;
 	#endif
+	listeTrajets = new LinkedList;
 } //----- Fin de Catalogue
 
 
 Catalogue::~Catalogue()
-{
-	delete listeTrajets;
+{	
 	#ifdef MAP
 		cout << "Appel au destructeur de <Catalogue>" << endl;
 	#endif
+	delete listeTrajets;
 } //----- Fin de ~Catalogue
 
 

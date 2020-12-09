@@ -33,52 +33,53 @@ void ListOrd::Ajouter(const Trajet * unTrajet)
 }
 
 ListOrd::ListOrd()
-        {
-                head = NULL;
-                tail = NULL;
-                #ifdef MAP
-                        cout << "Appel au constructeur de <ListOrd>" << endl;
-                #endif
-        } //----- Fin de ListOrd
+{       
+        #ifdef MAP
+                cout << "Appel au constructeur de <ListOrd>" << endl;
+        #endif
+        head = NULL;
+        tail = NULL;   
+} //----- Fin de ListOrd
 
-        ListOrd::ListOrd(const ListOrd & ll)
-        {
-                #ifdef MAP
-                        cout << "Appel au constructeur de copie <ListOrd>" << endl;
-                #endif
-                head = NULL;
-                tail = NULL;
+ListOrd::ListOrd(const ListOrd & ll)
+{
+        #ifdef MAP
+                cout << "Appel au constructeur de copie <ListOrd>" << endl;
+        #endif
+        head = NULL;
+        tail = NULL;
 
-                Data *c = ll.head;
-                while(c != NULL){
-                        const Trajet * traj = c->current;
-                        Trajet * unTraj = const_cast<Trajet*>(traj);
-                        if(TrajetSimple * test = dynamic_cast<TrajetSimple*>(unTraj)){
-                                TrajetSimple * trajA = new TrajetSimple(*test);
-                                Ajouter(trajA);
-                                //trajA->Afficher();
-                        }else if(TrajetCompose* test = dynamic_cast<TrajetCompose*>(unTraj)){
-                                TrajetCompose * trajA = new TrajetCompose(*test);
-                                Ajouter(trajA);
-                                //trajA->Afficher();
-                        }
-                        c = c -> next;
+        Data *c = ll.head;
+        while(c != NULL){
+                const Trajet * traj = c->current;
+                Trajet * unTraj = const_cast<Trajet*>(traj);
+                if(TrajetSimple * test = dynamic_cast<TrajetSimple*>(unTraj)){
+                        TrajetSimple * trajA = new TrajetSimple(*test);
+                        Ajouter(trajA);
+                        //trajA->Afficher();
+                }else if(TrajetCompose* test = dynamic_cast<TrajetCompose*>(unTraj)){
+                        TrajetCompose * trajA = new TrajetCompose(*test);
+                        Ajouter(trajA);
+                        //trajA->Afficher();
                 }
+                c = c -> next;
         }
+}
 
-        ListOrd::~ListOrd()
-        {
-                Data * c1 = head;
-                Data * c2 = c1;
-                while(c1 != NULL) {
-                        c2 = c1 -> next; 
-                        delete c1;
-                        c1 = c2;
-                }
-                #ifdef MAP
-                        cout << "Appel au destructeur de <ListOrd>" << endl;
-                #endif
-        } //----- Fin de ~ListOrd
+ListOrd::~ListOrd()
+{
+        #ifdef MAP
+                cout << "Appel au destructeur de <ListOrd>" << endl;
+        #endif
+        Data * c1 = head;
+        Data * c2 = c1;
+        while(c1 != NULL) {
+                c2 = c1 -> next; 
+                delete c1;
+                c1 = c2;
+        }
+        
+} //----- Fin de ~ListOrd
 
 
 
