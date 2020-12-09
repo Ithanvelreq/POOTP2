@@ -8,7 +8,7 @@
 using namespace std;
 //------------------------------------------------------ Include personnel
 #include "TrajetCompose.h"
-#include "LinkedList.h"
+#include "ListOrd.h"
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC
@@ -20,7 +20,7 @@ cout << "Affichage du trajet composé ;\n" ;
 listeTrajet->Afficher();
 }
 
-LinkedList * TrajetCompose::getterListeTrajet () const {
+ListOrd * TrajetCompose::getterListeTrajet () const {
         return listeTrajet;
 }
 
@@ -51,7 +51,7 @@ TrajetCompose::TrajetCompose ( const TrajetCompose & unTrajetCompose )
 #ifdef MAP
     cout << "Appel au constructeur de copie de <TrajetCompose>" << endl;
 #endif
-LinkedList* llcopie = new LinkedList(*unTrajetCompose.getterListeTrajet());
+ListOrd* llcopie = new ListOrd(*unTrajetCompose.getterListeTrajet());
 listeTrajet=llcopie;
 villeDepart = new char[20];
 villeArrivee = new char[20];
@@ -59,7 +59,7 @@ strcpy(villeDepart, unTrajetCompose.getterVilleDepart());
 strcpy(villeArrivee, unTrajetCompose.getterVilleArrivee());
 } //----- Fin de TrajetCompose (constructeur de copie)
 
-TrajetCompose::TrajetCompose (LinkedList * ll )
+TrajetCompose::TrajetCompose (ListOrd * ll )
 // Algorithme :
 //
 {

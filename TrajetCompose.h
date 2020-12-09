@@ -1,5 +1,5 @@
 //---------- Interface de la classe <TrajetCompose> (fichier TrajetCompose.h) ->
-#include "LinkedList.h"
+#include "ListOrd.h"
 #if ! defined ( TRAJETCOMPOSE_H )
 #define TRAJETCOMPOSE_H
 #include "Trajet.h"
@@ -30,7 +30,7 @@ public:
     // Contrat :
     //
 
-    LinkedList * getterListeTrajet () const;
+    ListOrd * getterListeTrajet () const;
     // Mode d'emploi :
     // Méthode permettant d'accéder à l'attribut protégé listeTrajets
     // Contrat :
@@ -52,7 +52,7 @@ public:
     //
 
 
-    TrajetCompose (LinkedList * ll );
+    TrajetCompose (ListOrd * ll );
     // Mode d'emploi :
     // Construit un parcours composé des trajets présent dans la liste de
     // trajets passée en paramètres
@@ -70,7 +70,7 @@ protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
-LinkedList * listeTrajet;
+ListOrd * listeTrajet;
 };
 
 //-------------------------------- Autres définitions dépendantes de <Ensemble>
