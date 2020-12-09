@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include "LinkedList.h"
+#include "ListOrd.h"
 #include "TrajetSimple.h"
 #include "TrajetCompose.h"
 #include "Catalogue.h"
@@ -22,7 +23,7 @@ int main(){
 			catalog.Ajouter(traj);
 			cout <<"Trajet simple" << "  vd: " << vd << "  va: " << va << "  mt: " << mt <<"  Ajoute" << endl;
 		}else if(!strcmp(command, "ajoutc")){
-			LinkedList* ll = new LinkedList();
+			ListOrd* ll = new ListOrd();
 			cout << "Trajet composee"<< endl;	
 			while(strcmp(command, "fini") != 0){
 				cin.getline(vd, 20, ' ');

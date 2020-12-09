@@ -1,11 +1,14 @@
-Main: Main.o TrajetSimple.o Trajet.o LinkedList.o Data.o TrajetCompose.o Catalogue.o
-	g++ -o Main TrajetSimple.o Main.o Trajet.o LinkedList.o Data.o TrajetCompose.o Catalogue.o
+Main: Main.o TrajetSimple.o Trajet.o LinkedList.o Data.o TrajetCompose.o Catalogue.o ListOrd.o
+	g++ -o Main TrajetSimple.o Main.o Trajet.o LinkedList.o Data.o TrajetCompose.o Catalogue.o ListOrd.o
 
 Catalogue.o: Catalogue.cpp Catalogue.h LinkedList.cpp LinkedList.h Data.h Data.cpp TrajetSimple.cpp TrajetSimple.h TrajetCompose.h TrajetCompose.cpp Trajet.h Trajet.cpp
 	g++ -c -DMAP -Wall Catalogue.cpp
 
 TrajetCompose.o: TrajetCompose.cpp TrajetCompose.h Trajet.cpp Trajet.h
 	g++ -c -DMAP -Wall TrajetCompose.cpp
+
+ListOrd.o: ListOrd.cpp ListOrd.h LinkedList.cpp LinkedList.h Data.cpp Data.h
+	g++ -c -DMAP -Wall ListOrd.cpp
 
 LinkedList.o: LinkedList.cpp LinkedList.h Data.cpp Data.h
 	g++ -c -DMAP -Wall LinkedList.cpp

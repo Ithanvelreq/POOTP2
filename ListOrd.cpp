@@ -1,4 +1,4 @@
-/---------- Réalisation de la classe <LinkedList> (fichier LinkedList.cpp) --->
+//---------- Réalisation de la classe <LinkedList> (fichier LinkedList.cpp) --->
 
 //---------------------------------------------------------------- INCLUDE
 
