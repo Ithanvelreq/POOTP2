@@ -34,7 +34,6 @@ public:
         //Constructeur de la classe LinkedList
 
 //------------------------------------------------------------------ PRIVE
-        friend class Catalogue;
         friend class TrajetCompose;
 protected:
 //----------------------------------------------------- Méthodes protégées

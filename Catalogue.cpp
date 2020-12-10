@@ -2,8 +2,8 @@
                            Catalogue  -  description
                              -------------------
     début                : 25/11/2020
-    copyright            : (C) $YEAR$ par $AUTHOR$
-    e-mail               : $EMAIL$
+    copyright            : (C) 2020 par VELARDE REQUENA MDARHRI
+    e-mail               : ithan.velarde-requena@insa-lyon.fr taha.mdarhri@insa-lyon.fr
 *************************************************************************/
 
 //---------- Réalisation de la classe <Catalogue> (fichier Catalogue.cpp) ------------
@@ -20,15 +20,14 @@ using namespace std;
 #include "Catalogue.h"
 #include "TrajetCompose.h"
 #include "TrajetSimple.h"
-
 //------------------------------------------------------------- Constantes
-
 //----------------------------------------------------------------- PUBLIC		
 //----------------------------------------------------- Méthodes publiques
 void Catalogue::Ajouter(const Trajet * unTrajet)
 {
 	listeTrajets->Ajouter(unTrajet);
-}
+}//fin de Ajouter
+
 void Catalogue::Recherches(const char * vd, const char * va) const
 {
 		Data * c = listeTrajets->head;
@@ -40,7 +39,8 @@ void Catalogue::Recherches(const char * vd, const char * va) const
 			}
     			c = c -> next;
   		}
-}
+}//Fin de Recherches
+
 void Catalogue::Recherchea(const char * vd, const char * va) const
 {
 	Recherches(vd, va);
@@ -64,12 +64,15 @@ void Catalogue::Recherchea(const char * vd, const char * va) const
 		}
 		c = c->next;
 	}
-}
+}//Fin de recherchea
 			
-void Catalogue::Afficher() const{
+void Catalogue::Afficher() const
+{
 	listeTrajets->Afficher();
-}
+}//Fin de Afficher
+
 //-------------------------------------------- Constructeurs - destructeur
+
 Catalogue::Catalogue()
 {	
 	#ifdef MAP
@@ -91,6 +94,7 @@ Catalogue::~Catalogue()
 //------------------------------------------------------------------ PRIVE
 
 //----------------------------------------------------- Méthodes protégées
+
 void Catalogue::rechercheRecurrente(LinkedList * pp, const char * va) const
 {
 	Data * c = listeTrajets -> head;
@@ -130,4 +134,4 @@ void Catalogue::rechercheRecurrente(LinkedList * pp, const char * va) const
 		}
 		c = c->next;
 	}
-}
+}//Fin de rechercheRecurrente

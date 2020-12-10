@@ -2,8 +2,8 @@
                            LinkedList  -  description
                              -------------------
     début                : 25/11/2020
-    copyright            : (C) $YEAR$ par $AUTHOR$
-    e-mail               : $EMAIL$
+    copyright            : (C) 2020 par VELARDE REQUENA MDARHRI
+    e-mail               : ithan.velarde-requena@insa-lyon.fr taha.mdarhri@insa-lyon.fr
 *************************************************************************/
 
 //---------- Réalisation de la classe <LinkedList> (fichier LinkedList.cpp) ------------
@@ -36,19 +36,18 @@ void LinkedList::Ajouter(const Trajet * unTrajet)
                 tail->next = d;
                 tail = d;
         }
-}
+}//Fin de Ajouter
 
 
 void LinkedList::Afficher() const
 {
         Data * c = head;
         while(c != NULL) {
-                const Trajet * pq = c -> current;//->Afficher();
+                const Trajet * pq = c -> current;
                 pq->Afficher();
-                //c -> current->Afficher();
                 c = c -> next;
         }
-}
+}//Fin de Afficher
 
 bool LinkedList::operator==(const LinkedList & ll)const
 {
@@ -65,7 +64,7 @@ bool LinkedList::operator==(const LinkedList & ll)const
                 return false;
         }
         return true;
-}
+}//Fin de operator==
 
 bool LinkedList::Contains(const Trajet * unTrajet) const
 {
@@ -77,7 +76,8 @@ bool LinkedList::Contains(const Trajet * unTrajet) const
                 c = c -> next;
         }
         return false;
-}
+}//Fin de Contains
+
 //-------------------------------------------- Constructeurs - destructeur
 LinkedList::LinkedList()
 {       
@@ -100,19 +100,19 @@ LinkedList::LinkedList(const LinkedList & ll)
         Data *c = ll.head;
         while(c != NULL){
                 const Trajet * traj = c->current;
+
+                //creer copie de c->current
                 Trajet * unTraj = const_cast<Trajet*>(traj);
                 if(TrajetSimple * test = dynamic_cast<TrajetSimple*>(unTraj)){
                         TrajetSimple * trajA = new TrajetSimple(*test);
                         Ajouter(trajA);
-                        //trajA->Afficher();
                 }else if(TrajetCompose* test = dynamic_cast<TrajetCompose*>(unTraj)){
                         TrajetCompose * trajA = new TrajetCompose(*test);
                         Ajouter(trajA);
-                        //trajA->Afficher();
                 }
                 c = c -> next;
         }
-}
+}//Fin de LinkedList (constructeur de copie)
 
 LinkedList::~LinkedList()
 {       

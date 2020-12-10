@@ -2,8 +2,8 @@
                            Data  -  description
                              -------------------
     début                : 25/11/2020
-    copyright            : (C) $YEAR$ par $AUTHOR$
-    e-mail               : $EMAIL$
+    copyright            : (C) 2020 par VELARDE REQUENA MDARHRI
+    e-mail               : ithan.velarde-requena@insa-lyon.fr taha.mdarhri@insa-lyon.fr
 *************************************************************************/
 
 //---------- Réalisation de la classe <Data> (fichier Data.cpp) ------------
@@ -35,7 +35,7 @@ Data::Data(const Trajet * unTrajet)
 Data::~Data()
 {
 	delete current;
-}
+} //-----Fin de ~Data
 //------------------------------------------------------------------ PRIVE
 
 //----------------------------------------------------- Méthodes protégées

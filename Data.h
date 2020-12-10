@@ -1,9 +1,9 @@
 /*************************************************************************
                            Data  -  description
                              -------------------
-    début                : $DATE$
-    copyright            : (C) $YEAR$ par $AUTHOR$
-    e-mail               : $EMAIL$
+    début                : 25/11/2020
+    copyright            : (C) 2020 par VELARDE REQUENA MDARHRI
+    e-mail               : ithan.velarde-requena@insa-lyon.fr taha.mdarhri@insa-lyon.fr
 *************************************************************************/
 
 //---------- Interface de la classe <LinkedList> (fichier Data.h) ----------------
@@ -17,8 +17,9 @@
 
 //------------------------------------------------------------------------
 // Rôle de la classe <DATA>
-//
-//
+//Classe utilise comme maillon de notre LinkedList
+//Elle sert a stocker les differents objets de type
+//Trajet dans notre LinkedList
 //------------------------------------------------------------------------
 
 class Data
@@ -26,24 +27,21 @@ class Data
 //----------------------------------------------------------------- PUBLIC
 public:
 	const Trajet * current;
+    //Pointeur sur le trajet contenu dans cette structure
 	Data * next;
+    //Pointeur sur la prochaine cellule de la liste ordonee LinkedList
+
 //----------------------------------------------------- Méthodes publiques
-		
-// type Méthode ( liste des paramètres );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
 
 
 //-------------------------------------------- Constructeurs - destructeur
 	Data(const Trajet * unTrajet);
-	// Mode d'emploi :
 	// Construis un cellule de donnees utilisee pour notre LinkedList
-	//
+    // et insere le pointeur sur Trajet unTrajet
+
 	~Data();
-	// Mode d'emploi :
 	// Detruit une cellule de donnes pour notre LinkedList
+    // Et aussi le Trajet associe
 //------------------------------------------------------------------ PRIVE
 
 protected:

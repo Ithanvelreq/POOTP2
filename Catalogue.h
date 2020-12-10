@@ -1,9 +1,9 @@
 /*************************************************************************
                            Catalogue  -  description
                              -------------------
-    début                : $DATE$
-    copyright            : (C) $YEAR$ par $AUTHOR$
-    e-mail               : $EMAIL$
+    début                : 25/11/2020
+    copyright            : (C) 2020 par VELARDE REQUENA MDARHRI
+    e-mail               : ithan.velarde-requena@insa-lyon.fr taha.mdarhri@insa-lyon.fr
 *************************************************************************/
 
 //---------- Interface de la classe <Catalogue> (fichier Catalogue.h) ----------------
@@ -18,7 +18,9 @@
 
 //------------------------------------------------------------------------
 // Rôle de la classe <CATALOGUE>
-//
+//Classe qui gere la colection de trajets simples et composes
+//Elle permets de afficher tous les trajets ainsi que de faire
+//La recherche d'un trajet particulier
 //
 //------------------------------------------------------------------------
 
@@ -31,31 +33,42 @@ public:
 		
 // type Méthode ( liste des paramètres );
 	void Ajouter(const Trajet * unTrajet);
+	//Ajoute unTrajet au catalogue
+
 	void Recherches(const char * vd, const char * va) const;
+	//Recherche simple d'un trajet qui va de la ville vd a la ville va
+	//Sans escale et l'affiche
+
 	void Recherchea(const char * vd, const char * va) const;
+	//Recherche avancee de tous les trajets qui vont de la ville va a 
+	//la ville vd et les afficher
+
 	void Afficher() const;
-	// Mode d'emploi :
-	//
-	// Contrat :
-	//
+	//Affichage de la colection de trajets
+
 //-------------------------------------------- Constructeurs - destructeur
 	Catalogue();
-	// Mode d'emploi :
 	//Constructeur de la classe Catalogue
-	// Contrat :
-	//
 
 	~Catalogue();
-	// Mode d'emploi :
 	//Destructeur de la classe Catalogue
 
 //------------------------------------------------------------------ PRIVE
 
 protected:
 //----------------------------------------------------- Méthodes protégées
+
 	void rechercheRecurrente(LinkedList * pp, const char * va) const;
+	//Recherche recurrente utilisee lors de la recherche avancee
+	//Algorithme:
+	//Algorithme de type glouton, cherche tous les chemins possibles
+	//Pour arriver a la ville va de facon recurrente puis elimine
+	//ceux qui sont sans issue
+
 //----------------------------------------------------- Attributs protégés
+
 	LinkedList * listeTrajets;
+	//Liste chainee utilise pour stocker les trajets
 };
 
 //-------------------------------- Autres définitions dépendantes de <Catalogue>
