@@ -16,15 +16,17 @@ int main(){
 	cin.getline(command, 20);
 	while(strcmp(command, "bye") != 0){
 		if(!strcmp(command, "ajouts")){
+			//Ajout d un trajet simple
 			cin.getline(vd, 20, ' ');
 			cin.getline(va, 20, ' ');
 			cin.getline(mt, 20);
 			TrajetSimple * traj = new TrajetSimple(vd, va, mt);
 			catalog.Ajouter(traj);
-			cout <<"Trajet simple" << "  vd: " << vd << "  va: " << va << "  mt: " << mt <<"  Ajoute" << endl;
+			cout << "Trajet simple de " << vd << " a " << va << " en " << mt <<" ajoute"<< endl;
 		}else if(!strcmp(command, "ajoutc")){
+			//Ajout d un trajet compose
 			ListOrd* ll = new ListOrd();
-			cout << "Trajet composee"<< endl;	
+			cout << "Trajet composee";	
 			while(strcmp(command, "fini") != 0){
 				cin.getline(vd, 20, ' ');
 				cin.getline(va, 20, ' ');
@@ -32,19 +34,23 @@ int main(){
 				TrajetSimple* traj = new TrajetSimple(vd, va, mt);
 				ll->Ajouter(traj);
 				cin.getline(command, 20);
-				cout << "  vd: " << vd << "  va: " << va << "  mt: " << mt << endl;
+				cout << " de " << vd << " a " << va << " en " << mt << " -";
 			}
+			cout<<" ajoute"<<endl;
 			TrajetCompose * tc = new TrajetCompose(ll);
 			catalog.Ajouter(tc);
 			cout << "Ajoute"<< endl;
 		}else if(!strcmp(command, "afficher")){
+			//Affichage du catalogue
 			catalog.Afficher();
 		}else if(!strcmp(command, "recherches")){
+			//recherche simple dans le catalogue
 			cin.getline(vd, 20, ' ');
 			cin.getline(va, 20);
 			cout << "Les resultats de la recherche simple sont"<<endl;
 			catalog.Recherches(vd, va);
 		}else if(!strcmp(command, "recherchea")){
+			//recherche avancee dans le catalogue
 			cin.getline(vd, 20, ' ');
 			cin.getline(va, 20);
 			cout << "Les resultats de la recherche avance sont"<<endl;

@@ -48,17 +48,7 @@ void Catalogue::Recherchea(const char * vd, const char * va) const
 	while(c != NULL){
 		if(!strcmp(c -> current->getterVilleDepart(), vd)){
 			LinkedList * pp = new LinkedList();
-
-			//creer copie de c->current
-			const Trajet * traj = c->current;
-                        Trajet * unTraj = const_cast<Trajet*>(traj);
-                        if(TrajetSimple * test = dynamic_cast<TrajetSimple*>(unTraj)){
-                                TrajetSimple * trajA = new TrajetSimple(*test);
-                                pp->Ajouter(trajA);
-                        }else if(TrajetCompose* test = dynamic_cast<TrajetCompose*>(unTraj)){
-                                TrajetCompose * trajA = new TrajetCompose(*test);
-                                pp->Ajouter(trajA);
-                        }
+			creerCopie(pp, c->current);
 			rechercheRecurrente(pp, va);
 			delete pp;
 		}
@@ -102,31 +92,11 @@ void Catalogue::rechercheRecurrente(LinkedList * pp, const char * va) const
 		if(!strcmp(pp-> tail -> current->getterVilleArrivee(), c -> current->getterVilleDepart())){
 			if(!pp->Contains(c -> current)){
 				if(!strcmp(c -> current->getterVilleArrivee(), va)){
-
-					//creer copie de c->current
-					const Trajet * traj = c->current;
-                        		Trajet * unTraj = const_cast<Trajet*>(traj);
-                        		if(TrajetSimple * test = dynamic_cast<TrajetSimple*>(unTraj)){
-                                		TrajetSimple * trajA = new TrajetSimple(*test);
-                                		pp->Ajouter(trajA);
-                        		}else if(TrajetCompose* test = dynamic_cast<TrajetCompose*>(unTraj)){
-                                		TrajetCompose * trajA = new TrajetCompose(*test);
-                                		pp->Ajouter(trajA);
-                        		}
+					creerCopie(pp, c->current);
 					pp->Afficher();
 				}else{
 					LinkedList *ppp = new LinkedList(*pp);
-
-					//creer copie de c->current
-					const Trajet * traj = c->current;
-                        		Trajet * unTraj = const_cast<Trajet*>(traj);
-                        		if(TrajetSimple * test = dynamic_cast<TrajetSimple*>(unTraj)){
-                                		TrajetSimple * trajA = new TrajetSimple(*test);
-                                		ppp->Ajouter(trajA);
-                        		}else if(TrajetCompose* test = dynamic_cast<TrajetCompose*>(unTraj)){
-                                		TrajetCompose * trajA = new TrajetCompose(*test);
-                                		ppp->Ajouter(trajA);
-                       			}
+					creerCopie(ppp, c->current	);
 					rechercheRecurrente(ppp, va);
 					delete ppp;
 				}
@@ -135,3 +105,16 @@ void Catalogue::rechercheRecurrente(LinkedList * pp, const char * va) const
 		c = c->next;
 	}
 }//Fin de rechercheRecurrente
+
+void Catalogue::creerCopie(LinkedList * pp, const Trajet * t) const
+{
+	const Trajet * traj = t;
+	Trajet * unTraj = const_cast<Trajet*>(traj);
+	if(TrajetSimple * test = dynamic_cast<TrajetSimple*>(unTraj)){
+			TrajetSimple * trajA = new TrajetSimple(*test);
+			pp->Ajouter(trajA);
+	}else if(TrajetCompose* test = dynamic_cast<TrajetCompose*>(unTraj)){
+			TrajetCompose * trajA = new TrajetCompose(*test);
+			pp->Ajouter(trajA);
+	}
+}//Fin de creerCopie

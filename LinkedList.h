@@ -41,6 +41,7 @@ public:
 	bool operator == (const LinkedList & ll) const;
 	//Renvoie true si this et ll sont de meme longeur et 
 	// comportent exactement les memes trajets
+	//(Se referer a operateur== dans les classes TrajetSimple et TrajetCompose)
 
 	bool Contains(const Trajet * unTrajet)const;
 	//Renvoie true s'il existe un trajet identique au

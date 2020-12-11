@@ -65,6 +65,10 @@ protected:
 	//Pour arriver a la ville va de facon recurrente puis elimine
 	//ceux qui sont sans issue
 
+	void creerCopie(LinkedList * pp, const Trajet * t) const;
+	//Methode qui cree une copie du Trajet pointe par t
+	//et l'ajoute a la LinkedList pp
+
 //----------------------------------------------------- Attributs protégés
 
 	LinkedList * listeTrajets;
