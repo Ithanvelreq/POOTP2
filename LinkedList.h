@@ -78,7 +78,7 @@ protected:
 //----------------------------------------------------- Attributs protégés	
 };
 
-//-------------------------------- Autres définitions dépendantes de <Ensemble>
+//-------------------------------- Autres définitions dépendantes de <LinkedList>
 
 #endif // LINKEDLIST_H
 

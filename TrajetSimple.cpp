@@ -1,3 +1,11 @@
+/*************************************************************************
+                           TrajetSimple  -  description
+                             -------------------
+    début                : 25/11/2020
+    copyright            : (C) 2020 par VELARDE REQUENA MDARHRI
+    e-mail               : ithan.velarde-requena@insa-lyon.fr taha.mdarhri@insa-lyon.fr
+*************************************************************************/
+
 //---------- Réalisation de la classe <TrajetSimple> (fichier TrajetSimple.cpp)>
 
 //---------------------------------------------------------------- INCLUDE
@@ -5,7 +13,6 @@
 //-------------------------------------------------------- Include système
 #include <iostream>
 using namespace std;
-#include "string.h"
 #include <cstring>
 //------------------------------------------------------ Include personnel
 #include "TrajetSimple.h"
@@ -19,11 +26,11 @@ void TrajetSimple::Afficher () const{
         cout << "Ville de départ :" << villeDepart << "\r\n";
         cout << "Ville d'arrivée :" << villeArrivee << "\r\n";
         cout << "Moyen de transport :" << moyenTransport << "\r\n";
-}
+}//Fin de Afficher
 
 const char * TrajetSimple::getterMoyenTransport () const {
         return moyenTransport;
-}
+}//Fin de getterMoyenTransport
 
 //------------------------------------------------- Surcharge d'opérateurs
 bool TrajetSimple::operator == ( const Trajet * unTrajet)const
@@ -42,14 +49,13 @@ bool TrajetSimple::operator == ( const Trajet * unTrajet)const
 	}else{
 		return false;
 	}	
-}
+}//----- Fin de operator =
 
-//----- Fin de operator =
+
 //-------------------------------------------- Constructeurs - destructeur
 
 TrajetSimple::TrajetSimple ( const TrajetSimple & unTrajetSimple )
 // Algorithme :
-//
 {
 #ifdef MAP
     cout << "Appel au constructeur de copie de <TrajetSimple>" << endl;
@@ -60,12 +66,10 @@ moyenTransport = new char[20];
 strcpy(villeDepart, unTrajetSimple.getterVilleDepart());
 strcpy(villeArrivee, unTrajetSimple.getterVilleArrivee());
 strcpy(moyenTransport, unTrajetSimple.getterMoyenTransport());
-
 } //----- Fin de TrajetSimple (constructeur de copie)/
 
 TrajetSimple::TrajetSimple (const char * vd,const char* va,const char* mt )
 // Algorithme :
-//
 {
 #ifdef MAP
     cout << "Appel au constructeur de <TrajetSimple>" << endl;
@@ -80,7 +84,6 @@ strcpy(moyenTransport, mt);
 
 TrajetSimple::~TrajetSimple ( )
 // Algorithme :
-//
 {
 	#ifdef MAP
     	cout << "Appel au destructeur de <TrajetSimple>" << endl;

@@ -1,10 +1,19 @@
+/*************************************************************************
+                           TrajetCompose  -  description
+                             -------------------
+    début                : 25/11/2020
+    copyright            : (C) 2020 par VELARDE REQUENA MDARHRI
+    e-mail               : ithan.velarde-requena@insa-lyon.fr taha.mdarhri@insa-lyon.fr
+*************************************************************************/
+
 //---------- Interface de la classe <TrajetCompose> (fichier TrajetCompose.h) ->
-#include "ListOrd.h"
+
 #if ! defined ( TRAJETCOMPOSE_H )
 #define TRAJETCOMPOSE_H
-#include "Trajet.h"
-//--------------------------------------------------- Interfaces utilisées
 
+//--------------------------------------------------- Interfaces utilisées
+#include "ListOrd.h"
+#include "Trajet.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -25,52 +34,38 @@ public:
 //----------------------------------------------------- Méthodes publiques
 
     void Afficher (void) const;
-    // Mode d'emploi :
     // Affiche les caractéristiques des trajets composant le tajet composé
-    // Contrat :
-    //
 
     ListOrd * getterListeTrajet () const;
-    // Mode d'emploi :
     // Méthode permettant d'accéder à l'attribut protégé listeTrajets
-    // Contrat :
-    //
 
 //------------------------------------------------- Surcharge d'opérateurs
     bool operator == ( const Trajet * unTrajet )const;
-    // Mode d'emploi :
-    //
-    // Contrat :
-
-
+    // Compare le trajet que l'on veut avec celui passé en paramètres
+    // en vérifiant le type du trajet et en comparant la liste des trajets  
 
 //-------------------------------------------- Constructeurs - destructeur
     TrajetCompose ( const TrajetCompose & unTrajetCompose );
     // Mode d'emploi (constructeur de copie) :
-    //
-    // Contrat :
-    //
-
+    // Recopie la liste du trajet passé en paramètres et les villes
+    // de départ et d'arrivée
 
     TrajetCompose (ListOrd * ll );
-    // Mode d'emploi :
     // Construit un parcours composé des trajets présent dans la liste de
-    // trajets passée en paramètres
-    // Contrat :
-    //
-
+    // trajets ordonnée passée en paramètres
 
     virtual ~TrajetCompose ( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+    //Destructeur de la classe TrajetCompose
+    //Libère l'espace mémoire alloué à la liste de trajets et aux
+    //villes de départ et d'arrivée 
 
 protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
-ListOrd * listeTrajet;
+ListOrd * listeTrajet; 
+//Pointeur sur la liste de trajets composant un trajet composé
+
 };
 
 //-------------------------------- Autres définitions dépendantes de <Ensemble>

@@ -1,3 +1,11 @@
+/*************************************************************************
+                           Trajet  -  description
+                             -------------------
+    début                : 25/11/2020
+    copyright            : (C) 2020 par VELARDE REQUENA MDARHRI
+    e-mail               : ithan.velarde-requena@insa-lyon.fr taha.mdarhri@insa-lyon.fr
+*************************************************************************/
+
 //---------- Interface de la classe <Trajet> (fichier Trajet.h) ----------->
 #if ! defined ( TRAJET_H )
 #define TRAJET_H
@@ -22,29 +30,17 @@ public:
 //----------------------------------------------------- Méthodes publiques
 
     virtual void Afficher () const = 0;
-    // Mode d'emploi :
-    // Affiche les attributs d'un trajet (villeDepart et villeArrivee)
-    // Contrat :
-    //
+    // Méthode redéfinie dans les classes filles
 
     virtual const char * getterVilleDepart () const;
-    // Mode d'emploi :
     // Méthode permettant d'accéder à l'attribut protégé villeDepart
-    // Contrat :
-    //
 
-   virtual const char * getterVilleArrivee () const;
-    // Mode d'emploi :
+    virtual const char * getterVilleArrivee () const;
     // Méthode permettant d'accéder à l'attribut protégé villeArrivee
-    // Contrat :
-    //
 
 //------------------------------------------------- Surcharge d'opérateurs
     virtual bool operator == ( const Trajet * unTrajet )const = 0;
-    // Mode d'emploi :
-    //
-    // Contrat :
-
+    // Méthode redéfinie dans les classes filles
 
 //-------------------------------------------- Constructeurs - destructeur
 /*    Trajet ( const Trajet & unTrajet );
@@ -63,17 +59,16 @@ public:
 
     virtual ~Trajet ( );
     // Mode d'emploi :
-//
-    // Contrat :
-    //
+
 protected:
 //----------------------------------------------------- Méthodes protégées
 //----------------------------------------------------- Attributs protégés
 char * villeDepart;
 char * villeArrivee;
+//Pointeur sur les villes de départ et d'arrivée propres à chaque trajet
 };
 
-//-------------------------------- Autres définitions dépendantes de <Ensemble>
+//-------------------------------- Autres définitions dépendantes de <Trajet>
 
 #endif // TRAJET_H
 

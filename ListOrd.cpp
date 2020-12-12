@@ -1,4 +1,11 @@
-//---------- Réalisation de la classe <LinkedList> (fichier LinkedList.cpp) --->
+/*************************************************************************
+                           ListOrd  -  description
+                             -------------------
+    début                : 25/11/2020
+    copyright            : (C) 2020 par VELARDE REQUENA MDARHRI
+    e-mail               : ithan.velarde-requena@insa-lyon.fr taha.mdarhri@insa-lyon.fr
+*************************************************************************/
+//---------- Réalisation de la classe <ListOrd> (fichier ListOrd.cpp) --->
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -13,6 +20,10 @@ using namespace std;
 #include "Trajet.h"
 #include "TrajetSimple.h"
 #include "TrajetCompose.h"
+
+//------------------------------------------------------------- Constantes
+//----------------------------------------------------------------- PUBLIC		
+//----------------------------------------------------- Méthodes publiques
 
 void ListOrd::Ajouter(const Trajet * unTrajet)
 {
@@ -30,7 +41,7 @@ void ListOrd::Ajouter(const Trajet * unTrajet)
                         cout<<"La ville de départ du trajet que vous voulez ajouter ne correspond pas à la ville d'arrivée du dernier trajet actuel de la liste"<<endl;
                 }
     }
-}
+}//fin de Ajouter
 
 ListOrd::ListOrd()
 {       
@@ -64,7 +75,7 @@ ListOrd::ListOrd(const ListOrd & ll)
                 }
                 c = c -> next;
         }
-}
+}//Fin de ListOrd (constructeur de copie)
 
 ListOrd::~ListOrd(){}
 /*
@@ -79,9 +90,5 @@ ListOrd::~ListOrd(){}
                 delete c1;
                 c1 = c2;
 	}
-}
+}//----- Fin de ~ListOrd
 */        
-//----- Fin de ~ListOrd
-
-
-

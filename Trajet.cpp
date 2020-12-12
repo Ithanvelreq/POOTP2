@@ -1,50 +1,37 @@
+/*************************************************************************
+                           Trajet  -  description
+                             -------------------
+    début                : 25/11/2020
+    copyright            : (C) 2020 par VELARDE REQUENA MDARHRI
+    e-mail               : ithan.velarde-requena@insa-lyon.fr taha.mdarhri@insa-lyon.fr
+*************************************************************************/
+
 //---------- Réalisation de la classe <Trajet> (fichier Trajet.cpp) ------->
 
 //---------------------------------------------------------------- INCLUDE
 
 //-------------------------------------------------------- Include système
-
-//------------------------------------------------------ Include personnel
-#include "Trajet.h"
 #include <iostream>
 using namespace std;
+//------------------------------------------------------ Include personnel
+#include "Trajet.h"
 //------------------------------------------------------------- Constantes
 
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
 
-void Trajet::Afficher () const {
-        cout << "Affiche Trajet : \n";
-}
-
 const char * Trajet::getterVilleDepart () const {
         return villeDepart;
-}
+}//Fin de getterVilleDepart
 
 const char * Trajet::getterVilleArrivee () const {
         return villeArrivee;
-}
+}//Fin de getterVilleArrivee
 
 //------------------------------------------------- Surcharge d'opérateurs
-/* bool Trajet::operator = ( const Trajet * unTrajet )
-// Algorithme :
-//
-{
-} //----- Fin de operator =
-*/
 
 //-------------------------------------------- Constructeurs - destructeur
-/*  Trajet::Trajet ( const Trajet & unTrajet )
-// Algorithme :
-//
-{
-#ifdef MAP
-    cout << "Appel au constructeur de copie de <Trajet>" << endl;
-#endif
-} //----- Fin de Trajet (constructeur de copie)
-*/
-
 /*Trajet::Trajet ( )
 // Algorithme :
 //
@@ -54,6 +41,7 @@ const char * Trajet::getterVilleArrivee () const {
 #endif
 } //----- Fin de Trajet
 */
+
 Trajet::~Trajet ( )
 // Algorithme :
 //

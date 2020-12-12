@@ -1,9 +1,16 @@
+/*************************************************************************
+                           TrajetSimple  -  description
+                             -------------------
+    début                : 25/11/2020
+    copyright            : (C) 2020 par VELARDE REQUENA MDARHRI
+    e-mail               : ithan.velarde-requena@insa-lyon.fr taha.mdarhri@insa-lyon.fr
+*************************************************************************/
+
 //---------- Interface de la classe <TrajetSimple> (fichier TrajetSimple.h) --->
 #if ! defined ( TRAJETSIMPLE_H )
 #define TRAJETSIMPLE_H
-#include "Trajet.h"
 //--------------------------------------------------- Interfaces utilisées
-
+#include "Trajet.h"
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
@@ -23,56 +30,41 @@ public:
 //----------------------------------------------------- Méthodes publiques
 
     void Afficher (void) const;
-    // Mode d'emploi :
     // Affiche les caractéristiques d'un trajetSimple (villeDepart, 
     // villeArrivee et moyenTransport)
-    // Contrat :
-    //
 
     const char * getterMoyenTransport () const;
-    // Mode d'emploi :
     // Méthode permettant d'accéder à l'attribut protégé moyenTransport
-    // Contrat :
-    //
+
 //------------------------------------------------- Surcharge d'opérateurs
     bool operator==(const Trajet * unTrajet) const;
-    // Mode d'emploi :
-    //
-    // Contrat :
-
-
+    // Compare le type des trajets puis les villes de départ et 
+    // d'arrivée ainsi que le moyen de transport
 
 //-------------------------------------------- Constructeurs - destructeur
-/*    TrajetSimple ( const TrajetSimple & unTrajetSimple );
-    // Mode d'emploi (constructeur de copie) :
-    //
-    // Contrat :
-    //
-*/
 
     TrajetSimple (const char * vd,const char* va,const char* mt );
-    // Mode d'emploi :
     // Construit un trajet simple avec une ville de départ, une ville
     // d'arrivée et un moyen de transport
-    // Contrat :
-    //
-    TrajetSimple(const TrajetSimple & unTrajet);
 
+    TrajetSimple(const TrajetSimple & unTrajet);
+    // Mode d'emploi (constructeur de copie) :
+    // Copie les villes de départ et d'arrivée et le moyen de 
+    // transport de unTrajet
 
     virtual ~TrajetSimple ( );
-    // Mode d'emploi :
-    //
-    // Contrat :
-    //
+    // Libère l'espace mémoire alloué aux villes de départ et
+    // d'arrivée et au moyen de transport
 
 protected:
 //----------------------------------------------------- Méthodes protégées
 
 //----------------------------------------------------- Attributs protégés
 char * moyenTransport;
+//Pointeur sur le moyen de transport propre à un trajet simple
 };
 
-//-------------------------------- Autres définitions dépendantes de <Ensemble>
+//-------------------------------- Autres définitions dépendantes de <TrajetSimple>
 
 #endif // TRAJETSSIMPLE_H
 

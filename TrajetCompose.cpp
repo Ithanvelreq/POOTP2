@@ -1,4 +1,12 @@
-//---------- Réalisation de la classe <TrajetCompose> (fichier TrajetCompose.cp>
+/*************************************************************************
+                           TrajetCompose  -  description
+                             -------------------
+    début                : 25/11/2020
+    copyright            : (C) 2020 par VELARDE REQUENA MDARHRI
+    e-mail               : ithan.velarde-requena@insa-lyon.fr taha.mdarhri@insa-lyon.fr
+*************************************************************************/
+
+//---------- Réalisation de la classe <TrajetCompose> (fichier TrajetCompose.cpp>
 
 //---------------------------------------------------------------- INCLUDE
 
@@ -18,17 +26,16 @@ using namespace std;
 void TrajetCompose::Afficher () const{
 cout << "Affichage du trajet composé ;\n" ;
 listeTrajet->Afficher();
-}
+}//Fin de Afficher
 
 ListOrd * TrajetCompose::getterListeTrajet () const {
         return listeTrajet;
-}
+}//Fin de getterListeTrajet
 
 
 //------------------------------------------------- Surcharge d'opérateurs
    bool TrajetCompose::operator == ( const Trajet * unTrajet) const
 // Algorithme :
-//
 {
 	const Trajet * traj= unTrajet;
 	Trajet * unTraj = const_cast<Trajet*>(traj);
@@ -46,7 +53,6 @@ ListOrd * TrajetCompose::getterListeTrajet () const {
 //-------------------------------------------- Constructeurs - destructeur
 TrajetCompose::TrajetCompose ( const TrajetCompose & unTrajetCompose )
 // Algorithme :
-//
 {
 #ifdef MAP
     cout << "Appel au constructeur de copie de <TrajetCompose>" << endl;
@@ -61,7 +67,6 @@ strcpy(villeArrivee, unTrajetCompose.getterVilleArrivee());
 
 TrajetCompose::TrajetCompose (ListOrd * ll )
 // Algorithme :
-//
 {
 #ifdef MAP
     cout << "Appel au constructeur de <TrajetCompose>" << endl;
@@ -75,7 +80,6 @@ strcpy(villeArrivee, ll->tail->current->getterVilleArrivee());
 
 TrajetCompose::~TrajetCompose ( )
 // Algorithme :
-//
 {
 #ifdef MAP
     cout << "Appel au destructeur de <TrajetCompose>" << endl;
