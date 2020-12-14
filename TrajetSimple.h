@@ -29,7 +29,7 @@ class TrajetSimple : public Trajet
 public:
 //----------------------------------------------------- Méthodes publiques
 
-    void Afficher (void) const;
+    void Afficher (const char * mess = "TS") const;
     // Affiche les caractéristiques d'un trajetSimple (villeDepart, 
     // villeArrivee et moyenTransport)
 

@@ -12,6 +12,7 @@
 
 //-------------------------------------------------------- Include système
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 //------------------------------------------------------ Include personnel
@@ -39,13 +40,25 @@ void LinkedList::Ajouter(const Trajet * unTrajet)
 }//Fin de Ajouter
 
 
-void LinkedList::Afficher() const
+void LinkedList::Afficher(const char * mess /* = ""*/) const
 {
         Data * c = head;
+	int first = 0;
         while(c != NULL) {
-                const Trajet * pq = c -> current;
-                pq->Afficher();
+		const Trajet * pq = c->current;
+		if(!strcmp("TC", mess) && first == 0){
+			pq->Afficher("TC");
+		}else if (!strcmp("TC", mess) && (c ->next) == NULL){
+			pq->Afficher("fini");
+		}else if (!strcmp("TC", mess)){
+			pq->Afficher("then");
+		}else if (strcmp("TS", mess)){
+			pq->Afficher("TS");
+		}else{
+			pq->Afficher();	
+		}
                 c = c -> next;
+		first = 1;
         }
 }//Fin de Afficher
 

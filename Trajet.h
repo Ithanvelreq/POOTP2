@@ -29,7 +29,7 @@ class Trajet
 public:
 //----------------------------------------------------- Méthodes publiques
 
-    virtual void Afficher () const = 0;
+    virtual void Afficher (const char * mess = "T") const = 0;
     // Méthode redéfinie dans les classes filles
 
     virtual const char * getterVilleDepart () const;

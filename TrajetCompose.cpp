@@ -23,10 +23,9 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
-void TrajetCompose::Afficher () const{
-cout << "Affichage du trajet composé ;\n" ;
-listeTrajet->Afficher();
-}//Fin de Afficher
+void TrajetCompose::Afficher (const char * mess /* = "TC"*/) const{
+	listeTrajet->Afficher("TC");
+}//Fin de Afficr
 
 ListOrd * TrajetCompose::getterListeTrajet () const {
         return listeTrajet;

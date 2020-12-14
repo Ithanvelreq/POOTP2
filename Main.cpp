@@ -39,7 +39,6 @@ int main(){
 			cout<<" ajoute"<<endl;
 			TrajetCompose * tc = new TrajetCompose(ll);
 			catalog.Ajouter(tc);
-			cout << "Ajoute"<< endl;
 		}else if(!strcmp(command, "afficher")){
 			//Affichage du catalogue
 			catalog.Afficher();

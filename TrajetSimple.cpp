@@ -22,10 +22,17 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
-void TrajetSimple::Afficher () const{
-        cout << "Ville de départ :" << villeDepart << "\r\n";
-        cout << "Ville d'arrivée :" << villeArrivee << "\r\n";
-        cout << "Moyen de transport :" << moyenTransport << "\r\n";
+void TrajetSimple::Afficher (const char * mess /* = TS*/ ) const
+{
+	if (!strcmp("TC", mess)){
+		cout <<mess<<" : De " << villeDepart<<" a " << villeArrivee <<" en " << moyenTransport << " - ";
+	}else if (!strcmp("then", mess)){
+		cout <<" De " << villeDepart<<" a " << villeArrivee <<" en " << moyenTransport << " - ";
+	}else if (!strcmp("fini", mess)){
+        	cout <<" De " << villeDepart<<" a " << villeArrivee <<" en " << moyenTransport << endl;
+	}else{
+		cout <<"TS : De " << villeDepart<<" a " << villeArrivee <<" en " << moyenTransport << endl;
+	}
 }//Fin de Afficher
 
 const char * TrajetSimple::getterMoyenTransport () const {

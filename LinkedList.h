@@ -35,7 +35,7 @@ public:
 	void Ajouter (const Trajet * unTrajet);
 	//Ajoute unTrajet, pointeur sur un objet de type Trajet dans la liste
 
-	void Afficher() const;
+	void Afficher(const char * mess = "") const;
 	//Afficher les trajets presents dans la liste
 
 	bool operator == (const LinkedList & ll) const;

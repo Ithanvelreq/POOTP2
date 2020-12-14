@@ -33,7 +33,7 @@ class TrajetCompose : public Trajet
 public:
 //----------------------------------------------------- Méthodes publiques
 
-    void Afficher (void) const;
+    void Afficher (const char * mess = "TC") const;
     // Affiche les caractéristiques des trajets composant le tajet composé
 
     ListOrd * getterListeTrajet () const;
